@@ -1,0 +1,248 @@
+/* =========================================
+   MOTION-EFFECTS.CSS — Cinematic motion layers
+   Floating, parallax, ambient movement
+   ========================================= */
+
+/* ---- Floating animations for background layers ---- */
+
+.float-slow {
+  animation: floatSlow 14s ease-in-out infinite alternate;
+}
+.float-medium {
+  animation: floatMedium 10s ease-in-out infinite alternate;
+}
+.float-fast {
+  animation: floatFast 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-14px) translateX(6px); }
+}
+@keyframes floatMedium {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-10px) translateX(4px); }
+}
+@keyframes floatFast {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-6px) translateX(3px); }
+}
+
+/* ---- Parallax depth layers ---- */
+
+.parallax-deep {
+  transform: translateZ(-50px) scale(1.05);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.parallax-mid {
+  transform: translateZ(-20px) scale(1.02);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.parallax-near {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Glass card hover/ambient motion ---- */
+
+.glass-panel {
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+/* ---- Ambient glow drift ---- */
+
+.ambient-drift {
+  animation: ambientDrift 20s ease-in-out infinite alternate;
+}
+.ambient-drift-reverse {
+  animation: ambientDrift 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ambientDrift {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(3%, -2%) scale(1.02); }
+  66% { transform: translate(-2%, 1%) scale(0.98); }
+  100% { transform: translate(1%, -1%) scale(1); }
+}
+
+/* ---- Subtle horizontal sway ---- */
+
+.sway {
+  animation: sway 12s ease-in-out infinite alternate;
+}
+@keyframes sway {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(8px); }
+}
+
+/* ---- Node pulse ring for data flow ---- */
+
+.node-ring {
+  position: absolute;
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 50%;
+  animation: nodeRing 3s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes nodeRing {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* ---- Scanline overlay (subtle horizontal lines) ---- */
+
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  opacity: 0.15;
+}
+
+/* ---- Cinematic letterbox bars ---- */
+
+.cinema-bars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 95;
+}
+.cinema-bars::before,
+.cinema-bars::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  background: rgba(0, 0, 0, 0.25);
+  transition: all 1.2s ease;
+}
+.cinema-bars::before {
+  top: 0;
+  height: 0;
+}
+.cinema-bars::after {
+  bottom: 0;
+  height: 0;
+}
+.cinema-bars.active::before {
+  height: 4vh;
+}
+.cinema-bars.active::after {
+  height: 4vh;
+}
+
+/* ---- Slow vertical drift for various elements ---- */
+
+.drift-up {
+  animation: driftUp 30s linear infinite;
+}
+@keyframes driftUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* ---- Data stream horizontal scroll ---- */
+
+.stream-scroll {
+  animation: streamScroll 40s linear infinite;
+}
+@keyframes streamScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100px); }
+}
+
+/* ---- Light beam sweep ---- */
+
+.light-beam-sweep {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.005) 45%,
+    rgba(212,175,55,0.015) 48%,
+    rgba(212,175,55,0.015) 52%,
+    rgba(255,255,255,0.005) 55%,
+    transparent 60%
+  );
+  background-size: 300% 100%;
+  animation: lightBeamSweep 12s ease-in-out infinite;
+}
+
+@keyframes lightBeamSweep {
+  0%, 100% { background-position: 300% 0; }
+  50% { background-position: -100% 0; }
+}
+
+/* =========================================
+   OPENING SEQUENCE — Cinematic entry effects
+   ========================================= */
+
+/* --- Opening flash (gold-white burst) --- */
+@keyframes openingFlash {
+  0%   { opacity: 0; transform: scale(0.5); }
+  4%   { opacity: 1; transform: scale(1); }
+  10%  { opacity: 0.5; }
+  20%  { opacity: 0.1; }
+  50%  { opacity: 0.03; }
+  100% { opacity: 0; }
+}
+.opening-flash {
+  position: fixed; inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,1) 0%, rgba(255,248,210,1) 30%, rgba(212,175,55,0.4) 60%, transparent 80%);
+  opacity: 0;
+}
+
+/* --- Map blur-in --- */
+@keyframes mapBlurIn {
+  0%   { filter: invert(1) sepia(0.2) saturate(1.8) hue-rotate(-8deg) brightness(0.9) blur(12px) drop-shadow(0 0 80px rgba(212,175,55,0.15)) drop-shadow(0 0 200px rgba(212,175,55,0.06)); opacity: 0; }
+  40%  { filter: invert(1) sepia(0.2) saturate(1.8) hue-rotate(-8deg) brightness(0.9) blur(6px) drop-shadow(0 0 80px rgba(212,175,55,0.15)) drop-shadow(0 0 200px rgba(212,175,55,0.06)); opacity: 0.5; }
+  100% { filter: invert(1) sepia(0.2) saturate(1.8) hue-rotate(-8deg) brightness(0.9) blur(0) drop-shadow(0 0 80px rgba(212,175,55,0.15)) drop-shadow(0 0 200px rgba(212,175,55,0.06)); opacity: 0.35; }
+}
+
+/* --- Cover content scale-in with blur --- */
+@keyframes coverReveal {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.92); filter: blur(8px); }
+  60%  { opacity: 0.6; transform: translateY(10px) scale(0.98); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* --- Title glow ramp --- */
+@keyframes titleGlowIn {
+  0%   { opacity: 0; text-shadow: 0 0 0 rgba(212,175,55,0); }
+  50%  { opacity: 0.5; text-shadow: 0 0 30px rgba(212,175,55,0.3); }
+  100% { opacity: 1; text-shadow: 0 0 60px rgba(212,175,55,0.15); }
+}
+
+/* --- Light sweep initial pass --- */
+@keyframes sweepOpen {
+  0%   { background-position: 300% 0; opacity: 0; }
+  20%  { opacity: 1; }
+  60%  { background-position: -100% 0; }
+  80%  { opacity: 1; }
+  100% { opacity: 0.6; background-position: -100% 0; }
+}
+.light-beam-sweep.opening-sweep {
+  animation: sweepOpen 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion) {
+  .float-slow, .float-medium, .float-fast,
+  .ambient-drift, .ambient-drift-reverse, .sway,
+  .drift-up, .stream-scroll { animation: none; }
+}

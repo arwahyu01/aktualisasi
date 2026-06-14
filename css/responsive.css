@@ -1,0 +1,113 @@
+/* =========================================
+   RESPONSIVE — Media queries for all sizes
+   ========================================= */
+
+/* ---- Tablet & Small Laptop ---- */
+@media (max-width: 1024px) {
+  .slide { padding:0.8rem; }
+  .glass-panel { padding:var(--space-md); border-radius:var(--radius-lg); max-height:86vh; }
+  .nav-dots { display:none; }
+  .cover-grid { grid-template-columns: 0.5fr 1.5fr; gap:var(--space-md); }
+  .cover-photo { height:360px; }
+  .row-3 { gap:var(--space-sm); }
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  .ba-grid { gap:var(--space-sm); }
+}
+
+/* ---- Mobile Landscape & Small Tablet ---- */
+@media (max-width: 768px) {
+  .slide { padding:0.6rem; }
+  .glass-panel { padding:var(--space-sm) var(--space-md); border-radius:var(--radius-md); max-height:85vh; }
+  :root {
+    --title-xl: clamp(1.8rem, 5vw, 2.2rem);
+    --title-lg: clamp(1.3rem, 3.5vw, 1.6rem);
+    --title-md: clamp(1rem, 2.5vw, 1.2rem);
+    --body-lg: clamp(0.85rem, 2vw, 1rem);
+    --body-md: clamp(0.75rem, 1.8vw, 0.85rem);
+    --body-sm: clamp(0.6rem, 1.5vw, 0.7rem);
+  }
+
+  .cover-grid { grid-template-columns:1fr; gap:var(--space-sm); }
+  .cover-photo { height:200px; }
+
+  .col3, .row-3 { grid-template-columns:1fr; }
+  .team-grid { grid-template-columns:1fr; gap:0.3rem; }
+  .feat-grid { grid-template-columns:1fr 1fr; gap:0.3rem; }
+
+  .value-label { width:90px; font-size:var(--body-sm); }
+  .value-row { gap:0.3rem; }
+
+  .global-header { left:0.5rem; right:0.5rem; padding:0.3rem 0.6rem; }
+  .header-label { display:none; }
+  .header-logo:nth-child(2), .header-logo:nth-child(3) { display:none; }
+  .header-garuda { width:24px; height:24px; }
+  .header-logo { width:20px; height:20px; }
+
+  .closing-grid { grid-template-columns:1fr; gap:var(--space-sm); }
+  .ba-grid { grid-template-columns:1fr; }
+
+  .photo-grid-2, .photo-grid-3 { grid-template-columns:1fr 1fr; }
+}
+
+/* ---- Small Mobile ---- */
+@media (max-width: 480px) {
+  .slide { padding:0.4rem; }
+  .glass-panel { padding:0.4rem 0.6rem; border-radius:var(--radius-sm); max-height:84vh; }
+  .photo-grid-2, .photo-grid-3, .photo-grid-4 { grid-template-columns:1fr 1fr; }
+  .photo-item { min-height:35px; }
+  .photo-item .placeholder-icon { font-size:1rem; }
+  .stats-grid { grid-template-columns:1fr 1fr; gap:0.3rem; }
+  .feat-grid { grid-template-columns:1fr 1fr; }
+  .value-label { width:60px; font-size:0.55rem; }
+  .value-number { width:1.8rem; font-size:0.7rem; }
+  .value-track { height:8px; }
+  .cover-photo { height:160px; }
+  .global-header-right { display:none; }
+}
+
+/* ---- Short Height Screens (Projector 4:3, small laptops) ---- */
+@media (max-height: 720px) {
+  .glass-panel { padding:0.6rem 1rem; }
+  .cover-photo { height:280px; }
+  .photo-item { min-height:35px; }
+  .stat-number { font-size:1.3rem; }
+  .value-label { width:110px; font-size:0.7rem; }
+  .value-number { font-size:0.8rem; }
+  .value-track { height:10px; }
+  .feat-card { padding:0.4rem; }
+  .feat-card .icon { font-size:0.9rem; }
+  .feat-card .title { font-size:0.5rem; }
+  .feat-card .desc { font-size:0.45rem; }
+  .cover-meta .nama { font-size:1rem; }
+  .card { padding:0.5rem 0.6rem; }
+  .ba-card { padding:0.5rem 0.6rem; }
+  .ba-item { font-size:0.7rem; padding:0.2rem 0; }
+  .section-sub { font-size:0.7rem; margin-bottom:0.5rem; }
+  .stats-grid { gap:0.3rem; }
+  .stat-card { padding:0.4rem 0.3rem; }
+  .fishbone-wrap { height:150px; }
+  .satisfaction-bar { height:12px; }
+  .closing-card { padding:0.5rem; }
+  .closing-card p { font-size:0.55rem; }
+  .insight-card { padding:0.5rem 0.6rem; }
+  .cover-info { font-size:0.55rem; }
+  .team-card { padding:0.25rem 0.35rem; }
+  .team-card .name { font-size:0.5rem; }
+}
+
+/* ---- Very Short Height ---- */
+@media (max-height: 600px) {
+  .glass-panel { padding:0.4rem 0.8rem; }
+  .cover-photo { height:200px; }
+  :root {
+    --title-xl: clamp(1.4rem, 3vw, 1.8rem);
+    --title-lg: clamp(1rem, 2vw, 1.3rem);
+  }
+  .photo-item { min-height:25px; aspect-ratio:16/9; }
+  .photo-item .placeholder-icon { font-size:0.8rem; }
+  .photo-item .placeholder-label { display:none; }
+  .global-header { padding:0.2rem 0.5rem; }
+  .slide-counter { bottom:0.3rem; right:0.3rem; }
+  .value-row { margin-bottom:0.2rem; }
+  .accent-line { margin-bottom:0.3rem; }
+}

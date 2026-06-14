@@ -1,0 +1,152 @@
+/* =========================================
+   PARTICLES.CSS — Floating digital dust, micro dots
+   Ambient particle system (CSS-driven)
+   ========================================= */
+
+/* ---- Container for CSS particles ---- */
+.particle-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ---- Individual particles ---- */
+.particle-dot {
+  position: absolute;
+  width: var(--size, 2px);
+  height: var(--size, 2px);
+  border-radius: 50%;
+  background: var(--color, rgba(212,175,55,0.3));
+  box-shadow: 0 0 var(--glow, 4px) var(--color, rgba(212,175,55,0.1));
+  animation: particleFloat var(--dur, 12s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+}
+
+.particle-dot.red {
+  --color: rgba(200,16,46,0.25);
+}
+
+.particle-dot.white {
+  --color: rgba(255,255,255,0.15);
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) scale(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--max-opacity, 0.4);
+  }
+  25% {
+    transform: translateY(calc(var(--rise, -80) * 1px)) translateX(calc(var(--drift, 15) * 1px)) scale(1);
+  }
+  75% {
+    opacity: var(--max-opacity, 0.4);
+  }
+  100% {
+    transform: translateY(calc(var(--rise, -80) * 2.5px)) translateX(calc(var(--drift, 15) * -1px)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ---- Digital dust overlay ---- */
+.digital-dust {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(
+    1px 1px at 10% 20%,
+    rgba(212,175,55,0.04),
+    transparent
+  ),
+  radial-gradient(
+    1px 1px at 30% 60%,
+    rgba(212,175,55,0.03),
+    transparent
+  ),
+  radial-gradient(
+    1px 1px at 50% 15%,
+    rgba(200,16,46,0.03),
+    transparent
+  ),
+  radial-gradient(
+    1px 1px at 70% 40%,
+    rgba(212,175,55,0.04),
+    transparent
+  ),
+  radial-gradient(
+    1px 1px at 85% 70%,
+    rgba(255,255,255,0.02),
+    transparent
+  ),
+  radial-gradient(
+    1px 1px at 20% 80%,
+    rgba(200,16,46,0.03),
+    transparent
+  ),
+  radial-gradient(
+    1px 1px at 60% 85%,
+    rgba(212,175,55,0.03),
+    transparent
+  );
+  background-size: 200px 200px;
+  animation: dustDrift 60s linear infinite;
+}
+
+@keyframes dustDrift {
+  from { background-position: 0 0; }
+  to { background-position: 200px 200px; }
+}
+
+/* ---- Small twinkling stars ---- */
+.twinkle-field {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.twinkle-star {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 3px rgba(212,175,55,0.2);
+  animation: twinkle 4s ease-in-out infinite alternate;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.1; transform: scale(1.2); }
+}
+
+/* ---- Data nodes micro glow ---- */
+.data-nano {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(255, 196, 0, 0.2);
+  animation: nanoPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes nanoPulse {
+  0% { opacity: 0.1; transform: scale(0.8); }
+  100% { opacity: 0.6; transform: scale(1.2); }
+}
+
+@media (max-width: 768px) {
+  .digital-dust { display: none; }
+  .twinkle-field { display: none; }
+  .particle-dot { --size: 1.5px; }
+}

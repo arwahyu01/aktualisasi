@@ -1,0 +1,178 @@
+/* =========================================
+   LAYOUT — Slide system, panels, grid
+   ========================================= */
+
+/* ---- Progress Bar ---- */
+.progress-bar {
+  position: fixed; top:0; left:0; height:3px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  z-index:100; transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ---- Header ---- */
+.global-header {
+  position: fixed; top:0.6rem; left:1rem; right:1rem; z-index:70;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:0.4rem 1rem;
+  background: rgba(10,10,22,0.6);
+  border:1px solid var(--border);
+  backdrop-filter:blur(16px);
+  border-radius: var(--radius-full);
+  opacity:0; transform:translateY(-10px);
+  animation: headerIn 0.5s ease 0.2s forwards;
+}
+@keyframes headerIn { to { opacity:1; transform:translateY(0); } }
+
+.global-header-left { display:flex; align-items:center; gap:0.6rem; }
+.global-header-right { display:flex; align-items:center; gap:0.5rem; }
+
+.header-garuda { width:32px; height:32px; object-fit:contain; }
+.header-logo {
+  width:26px; height:26px; object-fit:contain; border-radius:var(--radius-full);
+  padding:0.15rem; background:rgba(255,255,255,0.85);
+  border:1px solid rgba(255,255,255,0.3);
+}
+.header-label {
+  font-size: var(--label); font-weight:800; letter-spacing:0.12em;
+  color: var(--gold); text-transform:uppercase;
+}
+
+/* ---- Nav Dots ---- */
+.nav-dots {
+  position: fixed; left:1rem; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:0.6rem; z-index:50;
+}
+.nav-dot {
+  width:8px; height:8px; border-radius:50%;
+  background: rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.06);
+  transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+  cursor:pointer;
+}
+.nav-dot.active {
+  background: var(--red); height:26px; width:8px; border-radius:13px;
+  border-color: var(--red);
+  box-shadow: 0 0 8px rgba(200,16,46,0.3);
+}
+
+/* ---- Slide Counter ---- */
+.slide-counter {
+  position: fixed; bottom:1rem; right:1rem; z-index:90;
+  font-size: var(--body-sm); font-weight:600; letter-spacing:0.06em;
+  color: rgba(255,255,255,0.25);
+  background: rgba(10,10,22,0.5);
+  backdrop-filter:blur(8px);
+  padding:0.25rem 0.6rem; border-radius:var(--radius-full);
+  border:1px solid rgba(255,255,255,0.04);
+}
+.slide-counter .current { color: var(--gold); }
+
+/* ---- Slide Container ---- */
+.slide-wrap {
+  height:100vh; width:100vw; overflow:hidden; position:relative;
+}
+.slide-track {
+  display:flex; flex-direction:column;
+  transition: transform 0.7s cubic-bezier(0.65,0,0.35,1);
+  will-change:transform;
+}
+.slide {
+  height:100vh; width:100vw; display:flex; align-items:center;
+  justify-content:center; padding:1rem; position:relative; flex-shrink:0;
+}
+
+/* ---- Glass Panel ---- */
+.glass-panel {
+  position:relative;
+  background: rgb(0 0 0 / 54%);
+  backdrop-filter:blur(20px);
+  border:1px solid var(--border);
+  border-radius: var(--radius-xl);
+  width:100%; max-width:1150px;
+  padding: var(--space-lg) var(--space-xl);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity:0; transform:translateY(20px);
+  max-height:88vh; overflow-y:auto;
+  overflow-x:hidden;
+}
+.glass-panel::-webkit-scrollbar { width:3px; }
+.glass-panel::-webkit-scrollbar-track { background:transparent; }
+.glass-panel::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+
+.slide.active .glass-panel {
+  opacity:1; transform:translateY(0);
+}
+.slide.active:nth-child(odd) .glass-panel {
+  animation: slideInLeft 0.6s cubic-bezier(0.65,0,0.35,1);
+}
+.slide.active:nth-child(even) .glass-panel {
+  animation: slideInRight 0.6s cubic-bezier(0.65,0,0.35,1);
+}
+
+@keyframes slideInLeft {
+  0% { opacity:0; transform:translate3d(-30px,15px,0); }
+  100% { opacity:1; transform:translate3d(0,0,0); }
+}
+@keyframes slideInRight {
+  0% { opacity:0; transform:translate3d(30px,15px,0); }
+  100% { opacity:1; transform:translate3d(0,0,0); }
+}
+
+/* ---- Accent Line ---- */
+.accent-line {
+  height:3px; width:70px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+  margin-bottom: var(--space-md); border-radius:2px;
+}
+.slide.active .accent-line { animation: lineGrow 0.7s ease-out both; }
+@keyframes lineGrow {
+  0% { width:0; }
+  100% { width:70px; }
+}
+
+/* ---- Pagination Bar ---- */
+.pagination {
+  display:flex; align-items:center; gap:0.5rem; margin-bottom:0.2rem;
+}
+.pagination .step {
+  font-size: var(--label); font-weight:800; color:var(--gold);
+  letter-spacing:0.08em; text-transform:uppercase;
+}
+.pagination .sep { font-size:var(--label); color:rgba(255,255,255,0.2); }
+.pagination .tag { font-size:var(--label); color:var(--text-muted); letter-spacing:0.04em; }
+.pagination .priority {
+  font-size:0.5rem; font-weight:800; letter-spacing:0.08em;
+  padding:0.12rem 0.45rem; border-radius:var(--radius-full);
+  background:rgba(200,16,46,0.12);
+  border:1px solid rgba(200,16,46,0.25);
+  color:var(--red); text-transform:uppercase;
+}
+
+/* ---- Cover Layout ---- */
+.cover-grid {
+  display:grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: var(--space-lg);
+  align-items:center;
+}
+
+/* ---- 2 Column ---- */
+.col2 { display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-md); }
+
+/* ---- 3 Column ---- */
+.col3 { display:grid; grid-template-columns: repeat(3,1fr); gap:var(--space-md); }
+
+/* ---- Before/After Grid ---- */
+.ba-grid { display:grid; grid-template-columns: 1fr 1fr; gap:var(--space-md); }
+
+/* ---- Stats Grid ---- */
+.stats-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:var(--space-sm); }
+
+/* ---- Closing Grid ---- */
+.closing-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:var(--space-sm); }
+
+/* ---- Feature Grid ---- */
+.feat-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:0.5rem; }
+
+/* ---- Team Grid ---- */
+.team-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:0.4rem; }

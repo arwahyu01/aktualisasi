@@ -1,0 +1,186 @@
+/* =========================================
+   ANIMATIONS — @keyframes, reveals, motion
+   ========================================= */
+
+/* ---- Reveal System ---- */
+.reveal {
+  opacity:0; transform:translateY(18px);
+  transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.slide.active .reveal { opacity:1; transform:translateY(0); }
+
+.reveal-left {
+  opacity:0; transform:translateX(-20px);
+  transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.slide.active .reveal-left { opacity:1; transform:translateX(0); }
+
+.reveal-right {
+  opacity:0; transform:translateX(20px);
+  transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.slide.active .reveal-right { opacity:1; transform:translateX(0); }
+
+.reveal-scale {
+  opacity:0; transform:scale(0.95);
+  transition: all 0.5s cubic-bezier(0.22,1,0.36,1);
+}
+.slide.active .reveal-scale { opacity:1; transform:scale(1); }
+
+/* Delays */
+.delay-1 { transition-delay:0.1s; }
+.delay-2 { transition-delay:0.2s; }
+.delay-3 { transition-delay:0.3s; }
+.delay-4 { transition-delay:0.4s; }
+.delay-5 { transition-delay:0.5s; }
+
+/* ---- Title Entrance ---- */
+.slide.active h2 { animation: titleUp 0.6s ease both; }
+@keyframes titleUp {
+  0% { opacity:0; transform:translateY(12px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+
+/* ---- Counter Animation (JS driven, CSS transition fallback) ---- */
+.counter-animate {
+  transition: all 1s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ---- Bar Fill Animation ---- */
+.bar-fill-animate {
+  transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+
+/* ---- Photo Item Entrance ---- */
+.photo-item {
+  opacity:0; transform:translateY(10px);
+  transition: all 0.4s ease;
+}
+.slide.active .photo-item { opacity:1; transform:translateY(0); }
+.slide.active .photo-item:nth-child(1) { transition-delay:0.2s; }
+.slide.active .photo-item:nth-child(2) { transition-delay:0.3s; }
+.slide.active .photo-item:nth-child(3) { transition-delay:0.4s; }
+.slide.active .photo-item:nth-child(4) { transition-delay:0.5s; }
+
+/* ---- Card Stagger ---- */
+.slide.active .card:nth-child(1) { transition-delay:0.1s; }
+.slide.active .card:nth-child(2) { transition-delay:0.2s; }
+.slide.active .card:nth-child(3) { transition-delay:0.3s; }
+.slide.active .card:nth-child(4) { transition-delay:0.4s; }
+.slide.active .card:nth-child(5) { transition-delay:0.5s; }
+.slide.active .card:nth-child(6) { transition-delay:0.6s; }
+
+/* ---- Cover Photo Aura ---- */
+@keyframes coverAura {
+  0%,100% { transform:translate(-10%,-10%) scale(1); }
+  50% { transform:translate(10%,10%) scale(1.1); }
+}
+
+/* ---- Gold Shimmer (for cover) ---- */
+@keyframes shimmer {
+  0% { background-position:-200% center; }
+  100% { background-position:200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold) 0%, #fff 50%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ---- Pulsing Dot (for attention) ---- */
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.7; transform:scale(0.85); }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ---- Floating Particles ---- */
+.fparticle {
+  position:absolute; width:3px; height:3px;
+  background:var(--gold); border-radius:50%;
+  pointer-events:none; opacity:0;
+  animation: particleFloat 6s ease-in-out infinite;
+}
+@keyframes particleFloat {
+  0% { transform:translateY(0) translateX(0) scale(0); opacity:0; }
+  10% { opacity:0.4; }
+  30% { transform:translateY(-60px) translateX(15px) scale(1); }
+  70% { opacity:0.3; }
+  100% { transform:translateY(-140px) translateX(-10px) scale(0); opacity:0; }
+}
+
+/* ---- Light Sweep Overlay (on cover) ---- */
+.light-sweep {
+  position: absolute; inset:0;
+  background: linear-gradient(105deg,
+    transparent 40%,
+    rgba(255,255,255,0.015) 45%,
+    rgba(212,175,55,0.03) 50%,
+    rgba(255,255,255,0.015) 55%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: lightSweep 8s ease-in-out infinite;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes lightSweep {
+  0%,100% { background-position: 200% 0; }
+  50% { background-position: -50% 0; }
+}
+.light-sweep-element {
+  position:absolute; top:0; left:0; width:30%; height:100%;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transform:skewX(-15deg) translateX(-100%);
+  pointer-events:none;
+}
+.slide.active .light-sweep-element {
+  animation: lightSweepEl 2.5s ease-in-out 0.5s forwards;
+}
+@keyframes lightSweepEl {
+  0% { transform:translateX(-100%) skewX(-15deg); }
+  100% { transform:translateX(200%) skewX(-15deg); }
+}
+
+/* ---- Hover Glow ---- */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(212,175,55,0.08);
+  border-color: rgba(212,175,55,0.2);
+}
+
+/* ---- Number Count-up (CSS counter support) ---- */
+.count-up {
+  display:inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Fade Transition on Slide Change ---- */
+.slide {
+  opacity:0;
+  transition: opacity 0.3s ease;
+}
+.slide.active {
+  opacity:1;
+}
+
+/* ---- Stagger Children Helper ---- */
+.stagger > * {
+  opacity:0;
+  transform:translateY(12px);
+  transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.slide.active .stagger > * { opacity:1; transform:translateY(0); }
+.slide.active .stagger > *:nth-child(1) { transition-delay:0.05s; }
+.slide.active .stagger > *:nth-child(2) { transition-delay:0.1s; }
+.slide.active .stagger > *:nth-child(3) { transition-delay:0.15s; }
+.slide.active .stagger > *:nth-child(4) { transition-delay:0.2s; }
+.slide.active .stagger > *:nth-child(5) { transition-delay:0.25s; }
+.slide.active .stagger > *:nth-child(6) { transition-delay:0.3s; }

@@ -1,0 +1,84 @@
+/* =========================================
+   BASE — Variables, Reset, Background
+   ========================================= */
+:root {
+  /* Colors */
+  --red: #C8102E;
+  --red-dark: #9a0d24;
+  --red-light: #e81e3e;
+  --gold: #D4AF37;
+  --gold-bright: #F5D742;
+  --gold-dark: #b8962e;
+  --gold-light: #e8c84a;
+  --bg-base: #0a0a16;
+  --bg-alt: #0f0f20;
+  --bg-surface: rgba(255,255,255,0.05);
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-glass: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.1);
+  --border-light: rgba(255,255,255,0.15);
+  --border-gold: rgba(212,175,55,0.25);
+  --border-red: rgba(200,16,46,0.25);
+  --text: #f0f0f5;
+  --text-secondary: #a0a0b8;
+  --text-muted: #707090;
+  --shadow: rgba(0,0,0,0.5);
+  --glow-red: rgba(200,16,46,0.15);
+  --glow-gold: rgba(212,175,55,0.12);
+
+  /* Typography */
+  --font: 'Plus Jakarta Sans', sans-serif;
+  --title-xl: clamp(2.8rem, 4.5vw, 4.5rem);
+  --title-lg: clamp(1.8rem, 2.8vw, 2.5rem);
+  --title-md: clamp(1.1rem, 1.6vw, 1.4rem);
+  --body-lg: clamp(1.05rem, 1.3vw, 1.15rem);
+  --body-md: clamp(0.9rem, 1.1vw, 1rem);
+  --body-sm: clamp(0.75rem, 0.9vw, 0.85rem);
+  --label: clamp(0.6rem, 0.75vw, 0.7rem);
+
+  /* Spacing */
+  --space-xs: 0.3rem;
+  --space-sm: 0.6rem;
+  --space-md: 1.2rem;
+  --space-lg: 1.8rem;
+  --space-xl: 2.4rem;
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.8rem;
+  --radius-lg: 1.2rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 999px;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body {
+  font-family: var(--font);
+  background: var(--bg-base);
+  color: var(--text);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--red); color: #fff; }
+
+/* Scrollbar hide */
+body::-webkit-scrollbar { display: none; }
+
+/* ===== Background Stage ===== */
+#bgStage {
+  position: fixed; inset:0; z-index:-2;
+  background: linear-gradient(160deg, var(--bg-base) 0%, var(--bg-alt) 40%, #12122a 70%, var(--bg-base) 100%);
+  overflow: hidden;
+}
+#bgStage::before {
+  content: '';
+  position: absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(200,16,46,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(212,175,55,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Legacy styles replaced by cinematic system in dedicated CSS modules */
