@@ -107,10 +107,14 @@
   display: none;
 }
 
-.photo-item img {
+.photo-item img,
+.showcase-body img,
+.ev-body img {
   cursor: pointer;
   transition: filter 0.2s;
 }
-.photo-item img:hover {
+.photo-item img:hover,
+.showcase-body img:hover,
+.ev-body img:hover {
   filter: brightness(1.08);
 }

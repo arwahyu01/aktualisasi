@@ -15,7 +15,7 @@
     var slides = document.querySelectorAll('.slide');
     var result = [];
     for (var s = 0; s < slides.length; s++) {
-      var imgs = slides[s].querySelectorAll('.photo-item img');
+      var imgs = slides[s].querySelectorAll('.photo-item img, .showcase-body img, .ev-body img');
       for (var i = 0; i < imgs.length; i++) {
         result.push({
           src: imgs[i].getAttribute('src'),
@@ -62,7 +62,7 @@
 
   // Delegate click on photo items
   document.addEventListener('click', function(e){
-    var img = e.target.closest('.photo-item img');
+    var img = e.target.closest('.photo-item img, .showcase-body img, .ev-body img');
     if (!img) return;
     if (img.closest('.lightbox-overlay')) return;
     images = collectImages();
