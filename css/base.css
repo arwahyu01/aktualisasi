@@ -19,9 +19,9 @@
   --border-light: rgba(255,255,255,0.15);
   --border-gold: rgba(212,175,55,0.25);
   --border-red: rgba(200,16,46,0.25);
-  --text: #f0f0f5;
-  --text-secondary: #a0a0b8;
-  --text-muted: #707090;
+  --text: #ffffff;
+  --text-secondary: #d8d8f0;
+  --text-muted: #a0a0c0;
   --shadow: rgba(0,0,0,0.5);
   --glow-red: rgba(200,16,46,0.15);
   --glow-gold: rgba(212,175,55,0.12);
@@ -30,11 +30,11 @@
   --font: 'Plus Jakarta Sans', sans-serif;
   --title-xl: clamp(2.8rem, 4.5vw, 4.5rem);
   --title-lg: clamp(1.8rem, 2.8vw, 2.5rem);
-  --title-md: clamp(1.1rem, 1.6vw, 1.4rem);
-  --body-lg: clamp(1.05rem, 1.3vw, 1.15rem);
-  --body-md: clamp(0.9rem, 1.1vw, 1rem);
-  --body-sm: clamp(0.75rem, 0.9vw, 0.85rem);
-  --label: clamp(0.6rem, 0.75vw, 0.7rem);
+  --title-md: clamp(1.2rem, 1.8vw, 1.5rem);
+  --body-lg: clamp(1.1rem, 1.4vw, 1.2rem);
+  --body-md: clamp(0.95rem, 1.2vw, 1.05rem);
+  --body-sm: clamp(0.85rem, 1.1vw, 0.95rem);
+  --label: clamp(0.72rem, 0.9vw, 0.82rem);
 
   /* Spacing */
   --space-xs: 0.3rem;
@@ -59,6 +59,7 @@ html, body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
 }
 
 ::selection { background: var(--red); color: #fff; }

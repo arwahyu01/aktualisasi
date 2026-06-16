@@ -12,6 +12,10 @@
   .row-3 { gap:var(--space-sm); }
   .stats-grid { grid-template-columns:repeat(2,1fr); }
   .ba-grid { gap:var(--space-sm); }
+  .fb-split { grid-template-columns:1fr; gap:0.4rem; }
+  .fb-left .fishbone-wrap { aspect-ratio:5/2; }
+  .fb-right { max-height:130px; overflow-y:auto; }
+  .fb-hint { display:none; }
 }
 
 /* ---- Mobile Landscape & Small Tablet ---- */
@@ -58,8 +62,8 @@
   .photo-item .placeholder-icon { font-size:1rem; }
   .stats-grid { grid-template-columns:1fr 1fr; gap:0.3rem; }
   .feat-grid { grid-template-columns:1fr 1fr; }
-  .value-label { width:60px; font-size:0.55rem; }
-  .value-number { width:1.8rem; font-size:0.7rem; }
+  .value-label { width:60px; font-size:0.65rem; }
+  .value-number { width:1.8rem; font-size:0.8rem; }
   .value-track { height:8px; }
   .cover-photo { height:160px; }
   .global-header-right { display:none; }
@@ -71,13 +75,13 @@
   .cover-photo { height:280px; }
   .photo-item { min-height:35px; }
   .stat-number { font-size:1.3rem; }
-  .value-label { width:110px; font-size:0.7rem; }
-  .value-number { font-size:0.8rem; }
+  .value-label { width:110px; font-size:0.75rem; }
+  .value-number { font-size:0.85rem; }
   .value-track { height:10px; }
   .feat-card { padding:0.4rem; }
   .feat-card .icon { font-size:0.9rem; }
-  .feat-card .title { font-size:0.5rem; }
-  .feat-card .desc { font-size:0.45rem; }
+  .feat-card .title { font-size:0.6rem; }
+  .feat-card .desc { font-size:0.55rem; }
   .cover-meta .nama { font-size:1rem; }
   .card { padding:0.5rem 0.6rem; }
   .ba-card { padding:0.5rem 0.6rem; }
@@ -85,17 +89,73 @@
   .section-sub { font-size:0.7rem; margin-bottom:0.5rem; }
   .stats-grid { gap:0.3rem; }
   .stat-card { padding:0.4rem 0.3rem; }
-  .fishbone-wrap { height:150px; }
+  .fb-split { grid-template-columns:1fr; gap:0.4rem; }
+  .fb-left .fishbone-wrap { aspect-ratio:7/3; }
+  .fb-label { font-size:0.6rem; }
+  .fb-hint { display:none; }
+  .fb-right { padding:0.4rem 0.5rem; max-height:120px; overflow-y:auto; }
+  .fb-panel-label { font-size:0.6rem; margin-bottom:0.3rem; }
+  .fb-panel-title { font-size:0.75rem; }
+  .fb-panel-body { gap:0.2rem; }
+  .fb-panel-section { padding:0.2rem 0.35rem; }
+  .fb-section-desc, .fb-section-root, .fb-section-impact, .fb-section-guidance { font-size:0.65rem; }
+  .fb-section-label { font-size:0.6rem; }
+  .fb-empty-icon { font-size:1.4rem; }
+  .fb-empty-text { font-size:0.65rem; }
+  .fb-head-text { font-size:0.65rem; }
+  .fb-card { padding:0.2rem 0.35rem; min-width:4.5rem; }
+  .fb-card-title { font-size:0.65rem; }
+  .fb-card-icon { font-size:0.85rem; }
   .satisfaction-bar { height:12px; }
+  section[data-index="8"] .satisfaction-card {
+    padding:0.8rem 0.85rem 0.7rem !important;
+  }
+  section[data-index="8"] .satisfaction-card > div:nth-child(1) > div:nth-child(2) span:first-child {
+    font-size:1.85rem !important;
+  }
+  section[data-index="8"] .satisfaction-card > div:nth-child(2) {
+    grid-template-columns:1fr;
+  }
+  section[data-index="8"] .satisfaction-card > div:nth-child(3) {
+    grid-template-columns:1fr;
+  }
+  section[data-index="8"] .photo-grid-3,
+  section[data-index="8"] .photo-grid-2 {
+    grid-template-columns:1fr 1fr;
+  }
+  section[data-index="8"] .photo-item {
+    min-height:54px !important;
+  }
   .closing-card { padding:0.5rem; }
-  .closing-card p { font-size:0.55rem; }
+  .closing-card p { font-size:0.65rem; }
   .insight-card { padding:0.5rem 0.6rem; }
-  .cover-info { font-size:0.55rem; }
+  .cover-info { font-size:0.65rem; }
   .team-card { padding:0.25rem 0.35rem; }
-  .team-card .name { font-size:0.5rem; }
+  .team-card .name { font-size:0.6rem; }
 }
 
 /* ---- Very Short Height ---- */
+@media (max-width: 768px) {
+  .fb-left .fishbone-wrap { aspect-ratio:9/4; }
+  .fb-card { min-width:3rem; padding:0.15rem 0.25rem; }
+  .fb-card-title { font-size:0.55rem; }
+  .fb-card-sub { display:none; }
+  .fb-card-icon { font-size:0.7rem; }
+  .fb-head { padding:0.2rem 0.35rem; }
+  .fb-head-text { font-size:0.55rem; }
+  .fb-head-icon { width:16px; height:16px; font-size:0.6rem; }
+  .fb-right { max-height:90px; padding:0.3rem 0.4rem; }
+  section[data-index="8"] .satisfaction-card > div:nth-child(1) > div:nth-child(2) span:first-child {
+    font-size:1.65rem !important;
+  }
+  section[data-index="8"] .photo-grid-3,
+  section[data-index="8"] .photo-grid-2 {
+    grid-template-columns:1fr 1fr;
+  }
+  section[data-index="8"] .photo-item {
+    min-height:48px !important;
+  }
+}
 @media (max-height: 600px) {
   .glass-panel { padding:0.4rem 0.8rem; }
   .cover-photo { height:200px; }

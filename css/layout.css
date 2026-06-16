@@ -49,6 +49,7 @@
   transition: all 0.4s cubic-bezier(0.22,1,0.36,1);
   cursor:pointer;
 }
+.nav-dot:hover { border-color:var(--gold); box-shadow:0 0 8px rgba(212,175,55,0.15); }
 .nav-dot.active {
   background: var(--red); height:26px; width:8px; border-radius:13px;
   border-color: var(--red);
@@ -84,8 +85,8 @@
 /* ---- Glass Panel ---- */
 .glass-panel {
   position:relative;
-  background: rgb(0 0 0 / 54%);
-  backdrop-filter:blur(20px);
+  background: rgb(0 0 0 / 65%);
+  backdrop-filter:blur(12px);
   border:1px solid var(--border);
   border-radius: var(--radius-xl);
   width:100%; max-width:1150px;
@@ -139,7 +140,8 @@
   letter-spacing:0.08em; text-transform:uppercase;
 }
 .pagination .sep { font-size:var(--label); color:rgba(255,255,255,0.2); }
-.pagination .tag { font-size:var(--label); color:var(--text-muted); letter-spacing:0.04em; }
+.pagination .tag { font-size:var(--label); color:var(--text-muted); letter-spacing:0.04em; cursor:default; transition:color 0.2s; }
+.pagination .tag:hover { color:var(--text-secondary); }
 .pagination .priority {
   font-size:0.5rem; font-weight:800; letter-spacing:0.08em;
   padding:0.12rem 0.45rem; border-radius:var(--radius-full);
@@ -176,3 +178,19 @@
 
 /* ---- Team Grid ---- */
 .team-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:0.4rem; }
+
+/* ---- Fishbone Split Screen ---- */
+.fb-split {
+  display:grid;
+  grid-template-columns: 3fr 2fr;
+  gap:var(--space-md);
+  align-items:stretch;
+}
+.fb-left {
+  display:flex; flex-direction:column;
+  min-width:0;
+}
+.fb-right {
+  display:flex; flex-direction:column;
+  min-width:0;
+}

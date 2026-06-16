@@ -1,31 +1,22 @@
 /* =========================================
-   FLOOR-GRID.CSS — Perspective holographic floor
-   Creates 3D depth with rotating grid and reflections
-   ========================================= */
+    FLOOR-GRID.CSS — Perspective holographic floor
+    ========================================= */
 
 .floor-grid-container {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  height: 55vh;
+  height: 40vh;
   z-index: -1;
-  perspective: 600px;
-  perspective-origin: 50% 100%;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.8;
-  transform: translateY(0);
-  transition: opacity 1.8s ease, transform 1.8s ease;
 }
 
 .floor-grid-perspective {
   position: absolute;
-  bottom: -10%;
-  left: -20%;
-  width: 140%;
+  bottom: 0;
+  left: -5%;
+  width: 110%;
   height: 100%;
-  transform: rotateX(75deg);
-  transform-origin: bottom center;
-  animation: floorGridDrift 20s ease-in-out infinite alternate;
 }
 
 /* Primary grid lines */
@@ -33,11 +24,9 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(212,175,55,0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,175,55,0.12) 1px, transparent 1px);
+    linear-gradient(rgba(212,175,55,0.55) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(212,175,55,0.55) 2px, transparent 2px);
   background-size: 50px 50px;
-  mask-image: linear-gradient(to top, black 0%, black 40%, transparent 70%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 70%);
 }
 
 /* Secondary finer grid */
@@ -45,107 +34,72 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(200,16,46,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200,16,46,0.02) 1px, transparent 1px);
-  background-size: 12px 12px;
-  mask-image: linear-gradient(to top, black 0%, transparent 60%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 60%);
+    linear-gradient(rgba(212,175,55,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.15) 1px, transparent 1px);
+  background-size: 10px 10px;
 }
 
 /* Floor glow — holographic sheen */
 .floor-glow {
   position: absolute;
-  bottom: 0; left: -10%;
-  width: 120%; height: 60%;
+  bottom: 0; left: -5%;
+  width: 110%; height: 60%;
   background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(212,175,55,0.06) 30%,
-    rgba(200,16,46,0.04) 60%,
-    rgba(212,175,55,0.06) 80%,
+    to top,
+    rgba(212,175,55,0.15) 0%,
+    rgba(200,16,46,0.08) 40%,
     transparent 100%
   );
-  animation: floorGlowPulse 8s ease-in-out infinite alternate;
-}
-
-/* Light reflection that sweeps across the floor */
-.floor-reflection {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 50%;
-  background: linear-gradient(
-    105deg,
-    transparent 30%,
-    rgba(212,175,55,0.04) 40%,
-    rgba(255,255,255,0.03) 45%,
-    rgba(212,175,55,0.04) 50%,
-    transparent 60%
-  );
-  background-size: 200% 100%;
-  animation: floorReflection 10s ease-in-out infinite;
-  mask-image: linear-gradient(to top, black 30%, transparent 80%);
-  -webkit-mask-image: linear-gradient(to top, black 30%, transparent 80%);
+  animation: floorGlowPulse 6s ease-in-out infinite alternate;
 }
 
 /* Floor hotspot under Riau */
 .floor-hotspot {
   position: absolute;
-  bottom: 20%; left: 12%;
-  width: 50%; height: 60%;
+  bottom: 30%; left: 12%;
+  width: 40%; height: 50%;
   background: radial-gradient(
     ellipse at center,
-    rgba(212,175,55,0.06) 0%,
-    rgba(200,16,46,0.03) 25%,
+    rgba(212,175,55,0.2) 0%,
+    rgba(200,16,46,0.1) 30%,
     transparent 60%
   );
   animation: floorHotspotPulse 6s ease-in-out infinite alternate;
 }
 
-/* Intersection dots on the floor grid */
+/* Intersection dots */
 .floor-dots {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle, rgba(212,175,55,0.2) 1px, transparent 1px);
-  background-size: 50px 50px;
-  mask-image: linear-gradient(to top, black 0%, black 20%, transparent 55%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, black 20%, transparent 55%);
+    radial-gradient(circle, rgba(212,175,55,0.6) 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
 }
 
-@keyframes floorGridDrift {
-  0% { transform: rotateX(75deg) translateY(0) scale(1); }
-  100% { transform: rotateX(75deg) translateY(-8px) scale(1.01); }
-}
-
-@keyframes floorGlowPulse {
-  0% { opacity: 0.4; }
-  100% { opacity: 0.9; }
-}
-
-@keyframes floorReflection {
-  0%, 100% { background-position: 200% 0; }
-  50% { background-position: -50% 0; }
-}
-
-@keyframes floorHotspotPulse {
-  0% { opacity: 0.3; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1.1); }
-}
-
-/* Edge fade for depth */
+/* Dark vignette fade at bottom */
 .floor-edge {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 30%;
-  background: linear-gradient(to top, rgba(10,10,22,0.6) 0%, transparent 100%);
+  height: 40%;
+  background: linear-gradient(to top, rgba(10,10,22,0.3) 0%, transparent 100%);
   pointer-events: none;
 }
 
+@keyframes floorGlowPulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes floorHotspotPulse {
+  0% { opacity: 0.5; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
 @media (max-width: 768px) {
-  .floor-grid-container { height: 35vh; }
-  .floor-grid-lines { background-size: 30px 30px; }
+  .floor-grid-container { height: 25vh; }
+  .floor-grid-lines { background-size: 25px 25px; }
   .floor-dots { display: none; }
 }
 @media (max-height: 600px) {
-  .floor-grid-container { height: 30vh; }
+  .floor-grid-container { height: 20vh; }
 }

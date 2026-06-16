@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/motion-effects.css">
 <link rel="stylesheet" href="css/lighting.css">
 <link rel="stylesheet" href="css/particles.css">
+<link rel="stylesheet" href="css/lightbox.css">
 </head>
 <body>
 
@@ -107,6 +108,9 @@
 <!-- Scanline overlay -->
 <div class="scanline-overlay"></div>
 
+<!-- Cursor glow follower -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
 <!-- Light beam sweep -->
 <div class="light-beam-sweep"></div>
 
@@ -191,21 +195,21 @@
   <div class="card reveal delay-1">
     <div class="card-label">Kondisi Sebelumnya</div>
     <ul class="card-list">
-      <li><span class="icon-check">✗</span> LKH masih menggunakan Microsoft Excel secara manual</li>
-      <li><span class="icon-check">✗</span> Format pelaporan belum seragam antar ASN</li>
-      <li><span class="icon-check">✗</span> Data laporan tidak terintegrasi</li>
-      <li><span class="icon-check">✗</span> Monitoring pimpinan belum optimal</li>
-      <li><span class="icon-check">✗</span> Laporan masih bersifat paper-based</li>
-      <li><span class="icon-check">✗</span> Pengumpulan laporan sering terlambat</li>
+      <li><span class="icon-cross">✗</span> LKH masih menggunakan Microsoft Excel secara manual</li>
+      <li><span class="icon-cross">✗</span> Format pelaporan belum seragam antar ASN</li>
+      <li><span class="icon-cross">✗</span> Data laporan tidak terintegrasi</li>
+      <li><span class="icon-cross">✗</span> Monitoring pimpinan belum optimal</li>
+      <li><span class="icon-cross">✗</span> Laporan masih bersifat paper-based</li>
+      <li><span class="icon-cross">✗</span> Pengumpulan laporan sering terlambat</li>
     </ul>
   </div>
   <div class="card reveal delay-2" style="border-color:rgba(200,16,46,0.2);">
     <div class="card-label" style="color:var(--red);">Dampak Risiko</div>
     <div class="stagger">
-      <div class="ba-item"><span style="color:var(--red);font-size:1rem;">⚠</span> Akuntabilitas pelaporan rendah</div>
-      <div class="ba-item"><span style="color:var(--red);font-size:1rem;">⚠</span> Berpotensi temuan audit</div>
-      <div class="ba-item"><span style="color:var(--red);font-size:1rem;">⚠</span> Monitoring kinerja tidak efektif</div>
-      <div class="ba-item"><span style="color:var(--red);font-size:1rem;">⚠</span> Berpengaruh terhadap Tunjangan Kinerja (50% bobot LKH)</div>
+      <div class="risk-item"><span class="risk-icon">⚠</span> Akuntabilitas pelaporan rendah</div>
+      <div class="risk-item"><span class="risk-icon">⚠</span> Berpotensi temuan audit</div>
+      <div class="risk-item"><span class="risk-icon">⚠</span> Monitoring kinerja tidak efektif</div>
+      <div class="risk-item"><span class="risk-icon">⚠</span> Berpengaruh terhadap Tunjangan Kinerja (50% bobot LKH)</div>
     </div>
   </div>
   <div class="card reveal delay-3">
@@ -222,14 +226,12 @@
 <!-- FOTO LKH MANUAL -->
 <div class="reveal delay-4" style="margin-top:0.6rem;">
 <div class="photo-grid photo-grid-2">
-  <div class="photo-item" style="min-height:55px;">
-    <span class="placeholder-icon">📸</span>
-    <span class="placeholder-label">Screenshot LKH Manual (Excel)</span>
+  <div class="photo-item" style="min-height:55px;overflow:hidden;">
+    <img src="assets/images/Screenshot%20LKH%20Manual%20%28Excel%29.png" alt="Screenshot LKH Manual (Excel)" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
     <span class="photo-badge">Before</span>
   </div>
-  <div class="photo-item" style="min-height:55px;">
-    <span class="placeholder-icon">📸</span>
-    <span class="placeholder-label">Proses Pelaporan Manual</span>
+  <div class="photo-item" style="min-height:55px;overflow:hidden;">
+    <img src="assets/images/Proses%20Pelaporan%20Manual.png" alt="Proses Pelaporan Manual" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
     <span class="photo-badge">Before</span>
   </div>
 </div>
@@ -277,21 +279,87 @@
   </div>
 </div>
 
-<!-- Fishbone -->
-<div class="card reveal delay-3" style="margin-top:0.6rem;">
-  <div class="card-label">Fishbone Diagram — Akar Masalah</div>
-  <div class="fishbone-wrap">
-    <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 800 200" fill="none">
-      <path d="M20 100H600" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M600 100L588 90M600 100L588 110" stroke="var(--red)" stroke-width="3.5" stroke-linecap="round"/>
-      <path d="M150 100L210 40M380 100L440 40" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" stroke-dasharray="5 3"/>
-      <path d="M180 100L120 160M410 100L350 160" stroke="rgba(212,175,55,0.12)" stroke-width="1.2" stroke-dasharray="5 3"/>
-    </svg>
-    <div style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%);background:var(--red);padding:0.4rem 0.7rem;border-radius:0.5rem;border:1px solid rgba(200,16,46,0.4);width:8.5rem;text-align:center;z-index:2;"><p style="font-size:0.55rem;font-weight:800;text-transform:uppercase;line-height:1.2;color:#fff;">Akuntabilitas Pelaporan Belum Optimal</p></div>
-    <div style="position:absolute;top:0;left:13%;background:var(--bg-card);padding:0.35rem 0.45rem;border-radius:0.4rem;border:1px solid var(--border);width:7rem;"><h4 style="font-size:0.5rem;font-weight:800;color:var(--gold);text-transform:uppercase;">SDM (Man)</h4><p style="font-size:0.45rem;color:var(--text-secondary);">Disiplin ASN belum optimal</p></div>
-    <div style="position:absolute;top:0;left:44%;background:var(--bg-card);padding:0.35rem 0.45rem;border-radius:0.4rem;border:1px solid var(--border);width:7rem;"><h4 style="font-size:0.5rem;font-weight:800;color:var(--gold);text-transform:uppercase;">Metode (Method)</h4><p style="font-size:0.45rem;color:var(--text-secondary);">Belum ada format baku</p></div>
-    <div style="position:absolute;bottom:0;left:0;background:rgba(200,16,46,0.08);padding:0.35rem 0.5rem;border-radius:0.5rem;border:1px solid rgba(200,16,46,0.2);width:9rem;"><h4 style="font-size:0.5rem;font-weight:800;color:var(--red);text-transform:uppercase;text-decoration:underline;">Sistem (Machine)</h4><p style="font-size:0.5rem;font-weight:600;">Belum ada sistem digital terintegrasi</p></div>
-    <div style="position:absolute;bottom:0;left:34%;background:var(--bg-card);padding:0.35rem 0.45rem;border-radius:0.4rem;border:1px solid var(--border);width:7rem;"><h4 style="font-size:0.5rem;font-weight:800;color:var(--gold);text-transform:uppercase;">Monitoring</h4><p style="font-size:0.45rem;color:var(--text-secondary);">Pengawasan belum optimal</p></div>
+<!-- Fishbone Split Screen -->
+<div class="fb-split reveal delay-3" style="margin-top:0.6rem;">
+  <div class="fb-left">
+    <div class="fb-left-header">
+      <span class="fb-label">Fishbone Diagram — Akar Masalah</span>
+      <span class="fb-hint">Klik salah satu cabang</span>
+    </div>
+    <div class="fishbone-wrap" id="fishboneWrap">
+      <svg class="fb-svg" viewBox="0 0 900 250" fill="none" preserveAspectRatio="xMidYMid meet">
+        <path class="fb-spine" d="M50 125 H660" stroke="rgba(255,255,255,0.12)" stroke-width="2" stroke-linecap="round"/>
+        <path class="fb-arrow" d="M660 125 L646 113 M660 125 L646 137" stroke="var(--red)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="fb-rib" data-fb-rib="sdm" d="M100 125 L55 30" stroke="rgba(212,175,55,0.2)" stroke-width="1.5"/>
+        <path class="fb-rib" data-fb-rib="metode" d="M340 125 L300 30" stroke="rgba(212,175,55,0.2)" stroke-width="1.5"/>
+        <path class="fb-rib" data-fb-rib="sistem" d="M130 125 L200 210" stroke="rgba(200,16,46,0.25)" stroke-width="1.5"/>
+        <path class="fb-rib" data-fb-rib="monitoring" d="M390 125 L450 210" stroke="rgba(212,175,55,0.2)" stroke-width="1.5"/>
+      </svg>
+
+      <div class="fb-head" data-fb="head">
+        <div class="fb-head-icon">!</div>
+        <div class="fb-head-text">Akuntabilitas<br>Pelaporan<br>Belum Optimal</div>
+      </div>
+
+      <div class="fb-bone" data-fb="sdm" style="--fb-x:8%;--fb-y:14%;">
+        <div class="fb-card">
+          <div class="fb-card-icon">👤</div>
+          <div class="fb-card-title">SDM</div>
+          <div class="fb-card-sub">Man</div>
+        </div>
+      </div>
+
+      <div class="fb-bone" data-fb="metode" style="--fb-x:34%;--fb-y:14%;">
+        <div class="fb-card">
+          <div class="fb-card-icon">📋</div>
+          <div class="fb-card-title">Metode</div>
+          <div class="fb-card-sub">Method</div>
+        </div>
+      </div>
+
+      <div class="fb-bone" data-fb="sistem" style="--fb-x:17%;--fb-y:78%;">
+        <div class="fb-card fb-card-accent">
+          <div class="fb-card-icon">💻</div>
+          <div class="fb-card-title">Sistem</div>
+          <div class="fb-card-sub">Machine</div>
+        </div>
+      </div>
+
+      <div class="fb-bone" data-fb="monitoring" style="--fb-x:44%;--fb-y:78%;">
+        <div class="fb-card">
+          <div class="fb-card-icon">📊</div>
+          <div class="fb-card-title">Monitoring</div>
+          <div class="fb-card-sub">Pengawasan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fb-right" id="fbPanel">
+    <div class="fb-panel-label">Detail Analisis</div>
+    <div class="fb-panel-empty" id="fbPEmpty">
+      <div class="fb-empty-icon">👆</div>
+      <div class="fb-empty-text">Klik cabang fishbone untuk melihat analisis detail</div>
+    </div>
+    <div class="fb-panel-content" id="fbPContent">
+      <div class="fb-panel-category" id="fbPCategory">—</div>
+      <div class="fb-panel-title" id="fbPTitle">—</div>
+      <div class="fb-panel-divider"></div>
+      <div class="fb-panel-body">
+        <div class="fb-panel-section">
+          <span class="fb-section-label">Masalah &amp; Akar</span>
+          <div class="fb-section-desc" id="fbPDesc">—</div>
+        </div>
+        <div class="fb-panel-section">
+          <span class="fb-section-label">Dampak</span>
+          <div class="fb-section-impact" id="fbPImpact">—</div>
+        </div>
+        <div class="fb-panel-section">
+          <span class="fb-section-label">Arah Perbaikan</span>
+          <div class="fb-section-guidance" id="fbPGuidance">—</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </div>
@@ -326,12 +394,12 @@
   </div>
   <div class="reveal delay-3 space-y-2">
     <div class="photo-grid photo-grid-2">
-      <div class="photo-item"><span class="placeholder-icon">📸</span><span class="placeholder-label">Konsultasi dengan Pimpinan</span><span class="photo-badge">Foto 1</span></div>
-      <div class="photo-item"><span class="placeholder-icon">📸</span><span class="placeholder-label">Analisis Kebutuhan Sistem</span><span class="photo-badge">Foto 2</span></div>
+      <div class="photo-item" style="min-height:65px;"><img src="assets/images/dokumentasi konsultasi laporan aktualisasi dengan mentor kegiatan 8.jpg" alt="Konsultasi Awal" loading="lazy"><span class="placeholder-label">Konsultasi Awal</span></div>
+      <div class="photo-item" style="min-height:65px;"><img src="assets/images/diskusi analisis pengguna lkh kegiatan 1.png" alt="Diskusi Analisis Pengguna" loading="lazy"><span class="placeholder-label">Diskusi Analisis Kebutuhan</span></div>
     </div>
     <div class="photo-grid photo-grid-2">
-      <div class="photo-item"><span class="placeholder-icon">📸</span><span class="placeholder-label">Dokumentasi Kegiatan</span><span class="photo-badge">Foto 3</span></div>
-      <div class="photo-item"><span class="placeholder-icon">📄</span><span class="placeholder-label">Dokumen Analisis Kebutuhan</span><span class="photo-badge">Doc</span></div>
+      <div class="photo-item" style="min-height:65px;"><img src="assets/images/meminta izin mentor untuk melakukan aktualisasi kegiatan 1.png" alt="Izin Mentor" loading="lazy"><span class="placeholder-label">Izin Mentor Aktualisasi</span></div>
+      <div class="photo-item" style="min-height:65px;"><img src="assets/images/lembar persetujuan mentor.png" alt="Lembar Persetujuan" loading="lazy"><span class="placeholder-label">Persetujuan Mentor</span><span class="photo-badge">Doc</span></div>
     </div>
   </div>
 </div>
@@ -366,13 +434,18 @@
     </div>
   </div>
   <div class="reveal delay-3 space-y-2">
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item"><span class="placeholder-icon">📸</span><span class="placeholder-label">Penyusunan Format LKH</span><span class="photo-badge">Foto 1</span></div>
-      <div class="photo-item"><span class="placeholder-icon">📸</span><span class="placeholder-label">Validasi Format dengan Atasan</span><span class="photo-badge">Foto 2</span></div>
+    <div class="photo-grid photo-grid-3">
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/konsultasi dengan mentor Kegiatan 2.png" alt="Konsultasi dengan Mentor" loading="lazy"><span class="placeholder-label">Konsultasi dengan Mentor</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/diskusi dengan kasubbag sdm & parmas kegiatan 2.png" alt="Diskusi dengan Kasubbag" loading="lazy"><span class="placeholder-label">Diskusi dengan Kasubbag</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/dokumentasi analisa fom LKH lama.png" alt="Analisa Form LKH Lama" loading="lazy"><span class="placeholder-label">Analisa Form Lama</span></div>
     </div>
     <div class="photo-grid photo-grid-2">
-      <div class="photo-item"><span class="placeholder-icon">📸</span><span class="placeholder-label">Dokumentasi Kegiatan</span><span class="photo-badge">Foto 3</span></div>
-      <div class="photo-item"><span class="placeholder-icon">📄</span><span class="placeholder-label">Draft Format Standar LKH</span><span class="photo-badge">Doc</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/analisis form LKH lama.png" alt="Analisis Form LKH Lama" loading="lazy"><span class="placeholder-label">Analisis Format Lama</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/format LKH baru.png" alt="Format LKH Baru" loading="lazy"><span class="placeholder-label">Format LKH Baru</span></div>
+    </div>
+    <div class="photo-grid photo-grid-2">
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/Draft Format Standar LHK.png" alt="Draft Format Standar" loading="lazy"><span class="placeholder-label">Draft Format Standar</span><span class="photo-badge">Draft</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/lembar persetujuan format baru.png" alt="Persetujuan Format Baru" loading="lazy"><span class="placeholder-label">Persetujuan Format Baru</span><span class="photo-badge">Doc</span></div>
     </div>
   </div>
 </div>
@@ -396,33 +469,41 @@
         <li><span class="icon-check">✓</span> Penyusunan relationship diagram</li>
         <li><span class="icon-check">✓</span> Penyusunan database (Spreadsheet)</li>
         <li><span class="icon-check">✓</span> Implementasi Google Apps Script</li>
-        <li><span class="icon-check">✓</span> Implementasi Google Spreadsheet</li>
       </ul>
     </div>
-    <div class="reveal delay-2 feat-grid">
-      <div class="feat-card"><span class="icon">🔐</span><div class="title">Login</div><div class="desc">Autentikasi pengguna</div></div>
-      <div class="feat-card"><span class="icon">📝</span><div class="title">Input Laporan</div><div class="desc">Pengisian LKH harian</div></div>
-      <div class="feat-card"><span class="icon">📊</span><div class="title">Monitoring</div><div class="desc">Pantauan real-time</div></div>
-      <div class="feat-card"><span class="icon">✅</span><div class="title">Approval</div><div class="desc">Validasi atasan</div></div>
-      <div class="feat-card"><span class="icon">👤</span><div class="title">Hak Akses</div><div class="desc">Role-based access</div></div>
-      <div class="feat-card"><span class="icon">📧</span><div class="title">Notifikasi</div><div class="desc">Email reminder</div></div>
-      <div class="feat-card"><span class="icon">📱</span><div class="title">QR Code</div><div class="desc">Verifikasi laporan</div></div>
-      <div class="feat-card"><span class="icon">🔄</span><div class="title">Reset Password</div><div class="desc">Manajemen akun</div></div>
-      <div class="feat-card"><span class="icon">📋</span><div class="title">System Logs</div><div class="desc">Riwayat aktivitas</div></div>
+    <div class="feat-grid feat-grid-compact stagger">
+      <div class="feat-card"><span class="icon">🔐</span><div class="title">Login</div></div>
+      <div class="feat-card"><span class="icon">📝</span><div class="title">Input</div></div>
+      <div class="feat-card"><span class="icon">📊</span><div class="title">Monitoring</div></div>
+      <div class="feat-card"><span class="icon">✅</span><div class="title">Approval</div></div>
+      <div class="feat-card"><span class="icon">👤</span><div class="title">Akses</div></div>
+      <div class="feat-card"><span class="icon">📧</span><div class="title">Notif</div></div>
+      <div class="feat-card"><span class="icon">📱</span><div class="title">QR Code</div></div>
+      <div class="feat-card"><span class="icon">🔄</span><div class="title">Reset PW</div></div>
+      <div class="feat-card"><span class="icon">📋</span><div class="title">Logs</div></div>
     </div>
   </div>
   <div class="reveal delay-3 space-y-2">
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:70px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Pembangunan Sistem</span><span class="photo-badge">Foto 1</span></div>
-      <div class="photo-item" style="min-height:70px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Perancangan Database</span><span class="photo-badge">Foto 2</span></div>
+    <div class="photo-grid photo-grid-4">
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/konsultasi dengan mentor terkait rancangan sistem kegiatan 3.jpg" alt="Konsultasi Rancangan" loading="lazy"><span class="placeholder-label">Konsultasi Rancangan</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/flowchrat sistem.png" alt="Flowchart Sistem" loading="lazy"><span class="placeholder-label">Flowchart Sistem</span><span class="photo-badge">Diagram</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/relation diagram sistem E-LKH.png" alt="Relation Diagram" loading="lazy"><span class="placeholder-label">Relation Diagram</span><span class="photo-badge">Diagram</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/Rancangan Database e-LKH.png" alt="Perancangan Database" loading="lazy"><span class="placeholder-label">Perancangan Database</span></div>
     </div>
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:70px;"><span class="placeholder-icon">🖥️</span><span class="placeholder-label">Dashboard E-LKH</span><span class="photo-badge">Screenshot</span></div>
-      <div class="photo-item" style="min-height:70px;"><span class="placeholder-icon">📄</span><span class="placeholder-label">Flowchart Sistem</span><span class="photo-badge">Doc</span></div>
+    <div class="photo-grid photo-grid-4">
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/dokumentasi pembuatan aplikasi e-lkh.jpg" alt="Pembangunan Sistem" loading="lazy"><span class="placeholder-label">Pembangunan Sistem</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/usecase diagram.png" alt="Use Case Diagram" loading="lazy"><span class="placeholder-label">Use Case Diagram</span><span class="photo-badge">Diagram</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/flowchart verifikasi laporan.png" alt="Flowchart Verifikasi" loading="lazy"><span class="placeholder-label">Flow. Verifikasi</span><span class="photo-badge">Diagram</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/flowchrat monitoring.png" alt="Flowchart Monitoring" loading="lazy"><span class="placeholder-label">Flow. Monitoring</span><span class="photo-badge">Diagram</span></div>
     </div>
-    <div class="card reveal delay-2">
-      <div class="card-label">Output</div>
-      <p style="font-size:var(--body-md);color:var(--text-secondary);"><strong style="color:var(--gold);">✓</strong> Sistem E-LKH berhasil dibangun</p>
+    <div class="photo-grid photo-grid-3">
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/flowchart pengelolaan LKH.png" alt="Flowchart Pengelolaan" loading="lazy"><span class="placeholder-label">Flowchart Pengelolaan</span><span class="photo-badge">Diagram</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/flowchart login.png" alt="Flowchart Login" loading="lazy"><span class="placeholder-label">Flowchart Login</span><span class="photo-badge">Diagram</span></div>
+      <div class="photo-item" style="min-height:48px;"><img src="assets/images/coding e-lkh.png" alt="Coding E-LKH" loading="lazy"><span class="placeholder-label">Coding E-LKH</span><span class="photo-badge">Develop</span></div>
+    </div>
+    <div class="card reveal delay-2" style="padding:0.35rem 0.6rem;">
+      <div class="card-label" style="font-size:0.6rem;">Output</div>
+      <p style="font-size:var(--body-sm);color:var(--text-secondary);margin:0;"><strong style="color:var(--gold);">✓</strong> Sistem E-LKH berhasil dibangun</p>
     </div>
   </div>
 </div>
@@ -458,13 +539,10 @@
     </div>
   </div>
   <div class="reveal delay-3 space-y-2">
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Penyempurnaan Dashboard</span><span class="photo-badge">Foto 1</span></div>
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Pengembangan Fitur</span><span class="photo-badge">Foto 2</span></div>
-    </div>
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Uji Coba Sistem</span><span class="photo-badge">Foto 3</span></div>
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Dokumentasi Kegiatan</span><span class="photo-badge">Foto 4</span></div>
+    <div class="photo-grid photo-grid-3">
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/halaman login LKH.png" alt="Halaman Login E-LKH" loading="lazy"><span class="photo-badge">Screenshot</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/halaman dashboard e-LKH.png" alt="Dashboard Sistem" loading="lazy"><span class="photo-badge">Screenshot</span></div>
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/hasil ringkasan AI untuk detail LKH pegawai.png" alt="Ringkasan AI" loading="lazy"><span class="photo-badge">Fitur</span></div>
     </div>
   </div>
 </div>
@@ -500,13 +578,8 @@
     </div>
   </div>
   <div class="reveal delay-3 space-y-2">
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Pengujian Login Sistem</span><span class="photo-badge">Foto 1</span></div>
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Pengujian Input Laporan</span><span class="photo-badge">Foto 2</span></div>
-    </div>
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Uji Coba Approval</span><span class="photo-badge">Foto 3</span></div>
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Perbaikan Bug Awal</span><span class="photo-badge">Foto 4</span></div>
+    <div class="photo-grid photo-grid-1">
+      <div class="photo-item" style="min-height:60px;"><img src="assets/images/dokumentasi pendampingan pengguna e-LKH.jpg" alt="Pendampingan Pengguna" loading="lazy"><span class="placeholder-label">Pendampingan Pengguna</span></div>
     </div>
   </div>
 </div>
@@ -536,29 +609,129 @@
       <div class="card-label">Evaluasi &amp; Penyempurnaan</div>
       <ul class="card-list">
         <li><span class="icon-check">✓</span> Penyusunan kuesioner evaluasi</li>
-        <li><span class="icon-check">✓</span> Pengumpulan respon pengguna</li>
+        <li><span class="icon-check">✓</span> Pengumpulan respon dari 25 pengguna</li>
         <li><span class="icon-check">✓</span> Rekap dan analisis hasil evaluasi</li>
         <li><span class="icon-check">✓</span> Penyempurnaan berdasarkan masukan</li>
       </ul>
     </div>
+    <div class="card reveal delay-3">
+      <div class="card-label">Rekomendasi Pengembangan</div>
+      <ul class="card-list" style="font-size:var(--body-sm);">
+        <li><span class="icon-check">✓</span> Upload dokumen &amp; helpdesk pengguna</li>
+        <li><span class="icon-check">✓</span> Multi Factor Authentication (MFA)</li>
+        <li><span class="icon-check">✓</span> Integrasi absensi, tunjangan &amp; domain khusus</li>
+        <li><span class="icon-check">✓</span> Arsip digital, ttd digital, notifikasi libur</li>
+      </ul>
+    </div>
   </div>
   <div class="reveal delay-3 space-y-2">
-    <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Sosialisasi Sistem E-LKH</span><span class="photo-badge">Foto 1</span></div>
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Pendampingan ASN</span><span class="photo-badge">Foto 2</span></div>
+    <div class="photo-grid photo-grid-3">
+      <div class="photo-item" style="min-height:50px;"><img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 6.jpg" alt="Sosialisasi E-LKH" loading="lazy"><span class="placeholder-label">Sosialisasi E-LKH</span></div>
+      <div class="photo-item" style="min-height:50px;"><img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 6.png" alt="Dokumentasi Sosialisasi" loading="lazy"><span class="placeholder-label">Dokumentasi Sosialisasi</span></div>
+      <div class="photo-item" style="min-height:50px;"><img src="assets/images/pengumpulan berkas dokumen kegiatan aktualisasi.png" alt="Pengumpulan Berkas" loading="lazy"><span class="placeholder-label">Pengumpulan Berkas</span></div>
     </div>
     <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Evaluasi Pengguna</span><span class="photo-badge">Foto 3</span></div>
-      <div class="photo-item" style="min-height:55px;"><span class="placeholder-icon">📄</span><span class="placeholder-label">Hasil Evaluasi Sistem</span><span class="photo-badge">Doc</span></div>
+      <div class="photo-item" style="min-height:50px;"><img src="assets/images/form kueisioner evaluasi kepuasan pengguna e-LKH.png" alt="Kuesioner Evaluasi" loading="lazy"><span class="placeholder-label">Kuesioner Evaluasi</span></div>
+      <div class="photo-item" style="min-height:50px;"><img src="assets/images/hasil analisa kuisioner e-lKH.png" alt="Hasil Analisis Kuesioner" loading="lazy"><span class="photo-badge">Hasil</span></div>
     </div>
-    <div class="satisfaction-card reveal delay-3">
-      <div class="card-label">Tingkat Kepuasan Pengguna</div>
-      <div style="display:flex;justify-content:center;gap:2rem;">
-        <div style="text-align:center;"><div class="stat-number gold counter" data-t="82">0%</div><div style="font-size:var(--body-sm);color:var(--text-secondary);">Sangat Puas</div></div>
-        <div style="text-align:center;"><div class="stat-number counter" style="color:#fff;" data-t="18">0%</div><div style="font-size:var(--body-sm);color:var(--text-secondary);">Puas</div></div>
+    <div class="satisfaction-card reveal delay-3" style="padding:0.5rem 0.6rem;">
+      <!-- Hero: Overall Score -->
+      <div style="text-align:center;margin-bottom:0.35rem;">
+        <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Rata-Rata Pencapaian</div>
+        <div style="position:relative;display:inline-block;">
+          <span style="font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--gold),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;">92,96%</span>
+          <span style="font-size:0.55rem;color:var(--text-muted);vertical-align:super;margin-left:0.1rem;">/100</span>
+        </div>
+        <div style="display:flex;justify-content:center;align-items:center;gap:0.3rem;margin-top:0.1rem;">
+          <span style="display:inline-block;width:24px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));"></span>
+          <span style="font-size:0.6rem;color:var(--text-secondary);">26 Indikator &bull; Skala 5</span>
+          <span style="display:inline-block;width:24px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);"></span>
+        </div>
       </div>
-      <div class="satisfaction-bar" style="margin-top:0.3rem;"><div class="seg gold" style="width:82%;"></div><div class="seg light" style="width:18%;"></div></div>
-      <div style="text-align:center;font-size:var(--body-sm);color:var(--text-muted);margin-top:0.2rem;">100% pengguna menyatakan puas</div>
+
+      <!-- Main Metrics: Kepuasan + Kelayakan -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem;margin-bottom:0.35rem;">
+        <div style="background:rgba(255,255,255,0.03);border-radius:0.35rem;padding:0.35rem 0.4rem;border:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.15rem;">
+            <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;">Kepuasan</span>
+            <span style="font-size:0.6rem;color:var(--text-muted);">25 responden</span>
+          </div>
+          <div style="display:flex;gap:0.4rem;align-items:baseline;margin-bottom:0.1rem;">
+            <span style="font-size:1.2rem;font-weight:900;color:var(--gold);">84%</span>
+            <span style="font-size:0.6rem;color:var(--text-secondary);">Sangat Puas</span>
+            <span style="margin-left:auto;font-size:0.75rem;font-weight:700;color:#fff;">16%</span>
+            <span style="font-size:0.55rem;color:var(--text-muted);">Puas</span>
+          </div>
+          <div class="progress-track" style="height:4px;"><div class="progress-fill" style="width:84%;"></div></div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:0.35rem;padding:0.35rem 0.4rem;border:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.15rem;">
+            <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;">Kelayakan</span>
+            <span style="font-size:0.6rem;color:var(--text-muted);">100% positif</span>
+          </div>
+          <div style="display:flex;gap:0.4rem;align-items:baseline;margin-bottom:0.1rem;">
+            <span style="font-size:1.2rem;font-weight:900;color:var(--gold);">72%</span>
+            <span style="font-size:0.6rem;color:var(--text-secondary);">Sangat Layak</span>
+            <span style="margin-left:auto;font-size:0.75rem;font-weight:700;color:#fff;">28%</span>
+            <span style="font-size:0.55rem;color:var(--text-muted);">Layak</span>
+          </div>
+          <div class="progress-track" style="height:4px;">
+            <div class="progress-fill" style="width:72%;"></div>
+            <div style="height:100%;width:28%;background:rgba(255,255,255,0.08);float:right;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Indicators + Kendala -->
+      <div style="display:grid;grid-template-columns:1fr 80px;gap:0.35rem;margin-bottom:0.3rem;">
+        <div>
+          <div style="font-size:0.55rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.15rem;">Indikator Tertinggi &mdash; Skor 5</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.15rem 0.3rem;">
+            <div style="display:flex;align-items:center;gap:0.2rem;">
+              <span style="font-size:0.55rem;color:var(--text-muted);min-width:52px;">Dukungan</span>
+              <div class="progress-track" style="flex:1;height:3px;"><div class="progress-fill" style="width:96%;"></div></div>
+              <span style="font-size:0.6rem;font-weight:700;color:var(--gold);min-width:22px;text-align:right;">4,80</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.2rem;">
+              <span style="font-size:0.55rem;color:var(--text-muted);min-width:52px;">Akses</span>
+              <div class="progress-track" style="flex:1;height:3px;"><div class="progress-fill" style="width:94.4%;"></div></div>
+              <span style="font-size:0.6rem;font-weight:700;color:var(--text-secondary);min-width:22px;text-align:right;">4,72</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.2rem;">
+              <span style="font-size:0.55rem;color:var(--text-muted);min-width:52px;">Efektivitas</span>
+              <div class="progress-track" style="flex:1;height:3px;"><div class="progress-fill" style="width:93.6%;"></div></div>
+              <span style="font-size:0.6rem;font-weight:600;color:var(--text-secondary);min-width:22px;text-align:right;">4,68</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.2rem;">
+              <span style="font-size:0.55rem;color:var(--text-muted);min-width:52px;">Tampilan</span>
+              <div class="progress-track" style="flex:1;height:3px;"><div class="progress-fill" style="width:93.6%;"></div></div>
+              <span style="font-size:0.6rem;font-weight:600;color:var(--text-secondary);min-width:22px;text-align:right;">4,68</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.2rem;grid-column:1/-1;">
+              <span style="font-size:0.55rem;color:var(--text-muted);min-width:52px;">Input</span>
+              <div class="progress-track" style="flex:1;height:3px;"><div class="progress-fill" style="width:93.6%;"></div></div>
+              <span style="font-size:0.6rem;font-weight:600;color:var(--text-secondary);min-width:22px;text-align:right;">4,68</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(212,175,55,0.06);border-radius:0.35rem;border:1px solid rgba(212,175,55,0.1);padding:0.2rem;">
+          <span style="font-size:0.55rem;color:var(--text-muted);line-height:1;">Kendala?</span>
+          <span class="stat-number gold" style="font-size:1rem;line-height:1.1;">73%</span>
+          <span style="font-size:0.55rem;color:var(--text-muted);line-height:1;">Tidak</span>
+        </div>
+      </div>
+
+      <!-- Kelebihan + Saran -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;padding-top:0.25rem;border-top:1px solid var(--border);">
+        <div>
+          <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.05rem;">Kelebihan</div>
+          <div style="font-size:0.6rem;color:var(--text-secondary);line-height:1.4;">Akses mudah &bull; User friendly &bull; Cepat &bull; Tertib &bull; Monitoring &bull; Notifikasi</div>
+        </div>
+        <div>
+          <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.05rem;">Saran</div>
+          <div style="font-size:0.6rem;color:var(--text-secondary);line-height:1.4;">Upload dokumen &bull; MFA &bull; Integrasi tunjangan &bull; Domain &bull; Arsip digital</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -572,40 +745,37 @@
 <div class="accent-line"></div>
 <h2 class="section-title">Hasil Aktualisasi</h2>
 
-<div class="ba-grid">
-  <div class="ba-card before reveal delay-1">
-    <div class="ba-header">
+<div class="ba-grid" style="gap:var(--space-sm);">
+  <div class="ba-card before reveal delay-1" style="padding:0.5rem 0.7rem;">
+    <div class="ba-header" style="margin-bottom:0.3rem;">
       <span class="ba-label" style="color:var(--red);">◄ Sebelum</span>
-      <span class="ba-pill" style="background:rgba(200,16,46,0.1);color:var(--red);border:1px solid rgba(200,16,46,0.2);">Manual</span>
+      <span class="ba-pill" style="background:rgba(200,16,46,0.1);color:var(--red);border:1px solid rgba(200,16,46,0.2);font-size:0.55rem;">Manual</span>
     </div>
-    <div class="ba-item"><span style="color:var(--red);">✗</span> LKH menggunakan Microsoft Excel manual</div>
-    <div class="ba-item"><span style="color:var(--red);">✗</span> Format pelaporan tidak seragam</div>
-    <div class="ba-item"><span style="color:var(--red);">✗</span> Data tidak terintegrasi</div>
-    <div class="ba-item"><span style="color:var(--red);">✗</span> Monitoring pimpinan sulit dilakukan</div>
-    <div class="photo-grid photo-grid-1" style="margin-top:0.3rem;">
-      <div class="photo-item" style="min-height:40px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Screenshot LKH Manual</span><span class="photo-badge">Before</span></div>
-    </div>
+    <div class="ba-item before" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✗ LKH Microsoft Excel manual</div>
+    <div class="ba-item before" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✗ Format pelaporan tidak seragam</div>
+    <div class="ba-item before" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✗ Data tidak terintegrasi</div>
+    <div class="ba-item before" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✗ Monitoring pimpinan sulit</div>
   </div>
-  <div class="ba-card after reveal delay-2">
-    <div class="ba-header">
+  <div class="ba-card after reveal delay-2" style="padding:0.5rem 0.7rem;">
+    <div class="ba-header" style="margin-bottom:0.3rem;">
       <span class="ba-label" style="color:var(--gold);">► Sesudah</span>
-      <span class="ba-pill" style="background:rgba(212,175,55,0.1);color:var(--gold);border:1px solid rgba(212,175,55,0.2);">Digital</span>
+      <span class="ba-pill" style="background:rgba(212,175,55,0.1);color:var(--gold);border:1px solid rgba(212,175,55,0.2);font-size:0.55rem;">Digital</span>
     </div>
-    <div class="ba-item"><span style="color:#4ade80;">✓</span> Sistem digital E-LKH terintegrasi</div>
-    <div class="ba-item"><span style="color:#4ade80;">✓</span> Monitoring real-time oleh pimpinan</div>
-    <div class="ba-item"><span style="color:#4ade80;">✓</span> Pelaporan lebih tertib dan akuntabel</div>
-    <div class="ba-item"><span style="color:#4ade80;">✓</span> Approval elektronik &amp; notifikasi email</div>
-    <div class="photo-grid photo-grid-1" style="margin-top:0.3rem;">
-      <div class="photo-item" style="min-height:40px;"><span class="placeholder-icon">🖥️</span><span class="placeholder-label">Dashboard E-LKH</span><span class="photo-badge">After</span></div>
-    </div>
+    <div class="ba-item after" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✓ Sistem digital E-LKH terintegrasi</div>
+    <div class="ba-item after" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✓ Monitoring real-time oleh pimpinan</div>
+    <div class="ba-item after" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✓ Pelaporan lebih tertib &amp; akuntabel</div>
+    <div class="ba-item after" style="font-size:var(--body-sm);padding:0.15rem 0.3rem;margin:0;">✓ Approval elektronik &amp; notifikasi</div>
   </div>
 </div>
 
-<div class="reveal delay-3 stats-grid" style="margin-top:0.6rem;">
-  <div class="stat-card"><div class="stat-number gold counter" data-t="100">0%</div><div class="stat-label">ASN Menggunakan</div></div>
-  <div class="stat-card"><div class="stat-number gold counter" data-t="100">0%</div><div class="stat-label">Digitalisasi</div></div>
-  <div class="stat-card"><div class="stat-number red">Rp 0</div><div class="stat-label">Biaya Pengadaan</div></div>
-  <div class="stat-card"><div class="stat-number gold counter" data-t="100">0%</div><div class="stat-label">Kepuasan Pengguna</div></div>
+<div style="display:grid;grid-template-columns:2fr 1fr;gap:var(--space-sm);margin-top:0.4rem;align-items:stretch;">
+  <div class="photo-item" style="min-height:130px;aspect-ratio:unset;"><img src="assets/images/before after e-LKH.png" alt="Perbandingan Before After" loading="lazy" style="width:100%;height:100%;object-fit:contain;object-position:center;padding:0.2rem;background:rgba(255,255,255,0.02);"><span class="photo-badge" style="font-size:0.5rem;padding:0.06rem 0.3rem;">Perbandingan</span></div>
+  <div class="stats-grid" style="grid-template-columns:1fr 1fr;gap:0.35rem;">
+    <div class="stat-card"><div class="stat-number gold counter" data-t="25">0</div><div class="stat-label">ASN Aktif</div></div>
+    <div class="stat-card"><div class="stat-number gold counter" data-t="100">0%</div><div class="stat-label">Digitalisasi</div></div>
+    <div class="stat-card"><div class="stat-number gold counter" data-t="100">0%</div><div class="stat-label">Kelayakan</div></div>
+    <div class="stat-card"><div class="stat-number gold counter" data-t="100">0%</div><div class="stat-label">Kepuasan</div></div>
+  </div>
 </div>
 </div>
 </section>
@@ -652,8 +822,8 @@
       </div>
     </div>
     <div class="photo-grid photo-grid-2">
-      <div class="photo-item" style="min-height:45px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Dokumentasi BerAKHLAK</span><span class="photo-badge">Foto</span></div>
-      <div class="photo-item" style="min-height:45px;"><span class="placeholder-icon">📸</span><span class="placeholder-label">Dokumentasi BerAKHLAK</span><span class="photo-badge">Foto</span></div>
+      <div class="photo-item" style="min-height:45px;"><span class="placeholder-icon">📊</span><span class="placeholder-label">Grafik Capaian</span><span class="photo-badge">Data</span></div>
+      <div class="photo-item" style="min-height:45px;"><span class="placeholder-icon">📋</span><span class="placeholder-label">Rekapitulasi Nilai</span><span class="photo-badge">Doc</span></div>
     </div>
   </div>
 </div>
@@ -671,7 +841,7 @@
     Pelaporan Kinerja ASN
   </h2>
 </div>
-<div class="reveal delay-2 closing-grid" style="margin-bottom:var(--space-md);">
+<div class="closing-grid stagger" style="margin-bottom:var(--space-md);">
   <div class="closing-card"><div class="num">01</div><h4>Sebelum</h4><p>Manual • Excel • Tidak terintegrasi • Sulit monitoring</p></div>
   <div class="closing-card"><div class="num">02</div><h4>Sesudah</h4><p>Digital • Terintegrasi • Monitoring real-time • Lebih tertib dan akuntabel</p></div>
   <div class="closing-card"><div class="num">03</div><h4>Kesimpulan</h4><p>Sistem E-LKH berhasil mendukung peningkatan akuntabilitas, efektivitas monitoring, serta transformasi digital pengelolaan laporan kinerja ASN di KPU Kabupaten Siak.</p></div>
@@ -702,5 +872,152 @@
 <script src="js/motion-system.js"></script>
 <script src="js/opening-sequence.js"></script>
 <script src="js/presentation.js"></script>
+<script>
+(function(){
+  var wrap = document.getElementById('fishboneWrap');
+  var pEmpty = document.getElementById('fbPEmpty');
+  var pContent = document.getElementById('fbPContent');
+  var pCategory = document.getElementById('fbPCategory');
+  var pTitle = document.getElementById('fbPTitle');
+  var pDesc = document.getElementById('fbPDesc');
+  var pImpact = document.getElementById('fbPImpact');
+  var pGuidance = document.getElementById('fbPGuidance');
+  var data = {
+    sdm: {
+      category:'Man',
+      title:'SDM — Disiplin & Pemahaman',
+      desc:'Disiplin dan pemahaman ASN dalam pelaporan kinerja harian masih rendah.',
+      impact:'Pengisian LKH tidak akurat, penilaian kinerja terganggu, berpotensi mempengaruhi Tukin',
+      guidance:'Pengawasan rutin dan pengingat otomatis dari sistem kepada ASN'
+    },
+    metode: {
+      category:'Method',
+      title:'Metode — Standar Pelaporan',
+      desc:'Belum tersedia format laporan kinerja harian yang baku dan seragam.',
+      impact:'Data sulit direkapitulasi, verifikasi pimpinan tidak konsisten',
+      guidance:'Penyusunan format standar LKH yang ditetapkan secara resmi'
+    },
+    sistem: {
+      category:'Machine',
+      title:'Sistem — Infrastruktur Digital',
+      desc:'Belum adanya sistem pelaporan kinerja harian ASN berbasis digital dan terintegrasi.',
+      impact:'Data tersebar (Excel manual), monitoring tidak real-time, rawan temuan audit',
+      guidance:'Pengembangan sistem digital E-LKH berbasis Google Apps Script'
+    },
+    monitoring: {
+      category:'Pengawasan',
+      title:'Monitoring — Verifikasi & Evaluasi',
+      desc:'Monitoring dan evaluasi pelaporan oleh atasan belum berjalan optimal.',
+      impact:'Approval lambat, monitoring kinerja tidak real-time',
+      guidance:'Sistem verifikasi dan approval digital terintegrasi dengan dashboard'
+    }
+  };
+  var activeBone = null;
+
+  function updatePanel(id) {
+    var info = data[id];
+    if (!info) return;
+    pCategory.textContent = info.category;
+    pTitle.textContent = info.title;
+    pDesc.textContent = info.desc;
+    pImpact.textContent = info.impact;
+    pGuidance.textContent = info.guidance;
+    pEmpty.style.display = 'none';
+    pContent.style.display = 'block';
+    pContent.classList.remove('fb-panel-in');
+    void pContent.offsetWidth;
+    pContent.classList.add('fb-panel-in');
+  }
+
+  function selectBone(id) {
+    if (activeBone === id) {
+      deselectBone();
+      return;
+    }
+    if (activeBone) {
+      var prev = wrap.querySelector('[data-fb="'+activeBone+'"]');
+      if (prev) prev.classList.remove('active');
+      var prevRib = wrap.querySelector('[data-fb-rib="'+activeBone+'"]');
+      if (prevRib) prevRib.classList.remove('active');
+    }
+    var curr = wrap.querySelector('[data-fb="'+id+'"]');
+    if (curr) curr.classList.add('active');
+    var currRib = wrap.querySelector('[data-fb-rib="'+id+'"]');
+    if (currRib) currRib.classList.add('active');
+    activeBone = id;
+    updatePanel(id);
+  }
+
+  function deselectBone() {
+    if (activeBone) {
+      var prev = wrap.querySelector('[data-fb="'+activeBone+'"]');
+      if (prev) prev.classList.remove('active');
+      var prevRib = wrap.querySelector('[data-fb-rib="'+activeBone+'"]');
+      if (prevRib) prevRib.classList.remove('active');
+      activeBone = null;
+    }
+    pContent.style.display = 'none';
+    pEmpty.style.display = '';
+  }
+
+  if (wrap) wrap.addEventListener('click', function(e) {
+    var bone = e.target.closest('[data-fb]');
+    if (!bone || !bone.dataset.fb) return;
+    if (bone.dataset.fb === 'head') return;
+    selectBone(bone.dataset.fb);
+  });
+
+  // Auto-select SDM (Man) saat slide terbuka
+  var slide = wrap.closest('.slide');
+  function autoSelectSDM() {
+    if (slide && slide.classList.contains('active')) {
+      selectBone('sdm');
+    }
+  }
+  setTimeout(autoSelectSDM, 700);
+  if (slide && window.MutationObserver) {
+    var obs = new MutationObserver(function() {
+      if (slide.classList.contains('active')) {
+        setTimeout(autoSelectSDM, 450);
+      }
+    });
+    obs.observe(slide, { attributes: true, attributeFilter: ['class'] });
+  }
+})();
+</script>
+<script>
+(function(){
+  var glow = document.getElementById('cursorGlow');
+  if (!glow) return;
+  var x = window.innerWidth/2, y = window.innerHeight/2;
+  var cx = x, cy = y;
+  function move(e) {
+    cx = e.clientX;
+    cy = e.clientY;
+  }
+  document.addEventListener('mousemove', move);
+  function anim() {
+    x += (cx - x) * 0.12;
+    y += (cy - y) * 0.12;
+    glow.style.left = x + 'px';
+    glow.style.top = y + 'px';
+    requestAnimationFrame(anim);
+  }
+  anim();
+})();
+</script>
+
+<!-- Lightbox overlay -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
+  <div class="lightbox-img-wrap">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  </div>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script src="js/lightbox.js"></script>
 </body>
 </html>
