@@ -17,9 +17,7 @@
   .fb-right { max-height:130px; overflow-y:auto; }
   .fb-hint { display:none; }
   
-  [data-index="6"] .glass-panel > div:first-child { grid-template-columns:1fr !important; }
-  .showcase-card { flex:0 0 50%; }
-  .showcase-card.featured { flex:0 0 60%; }
+  [data-index="6"] .glass-panel > div:first-of-type { grid-template-columns:1fr !important; }
 }
 
 /* ---- Mobile Landscape & Small Tablet ---- */
