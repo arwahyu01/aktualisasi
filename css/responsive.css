@@ -16,6 +16,10 @@
   .fb-left .fishbone-wrap { aspect-ratio:5/2; }
   .fb-right { max-height:130px; overflow-y:auto; }
   .fb-hint { display:none; }
+  
+  [data-index="6"] .glass-panel > div:first-child { grid-template-columns:1fr !important; }
+  .showcase-card { flex:0 0 50%; }
+  .showcase-card.featured { flex:0 0 60%; }
 }
 
 /* ---- Mobile Landscape & Small Tablet ---- */
@@ -51,6 +55,20 @@
   .ba-grid { grid-template-columns:1fr; }
 
   .photo-grid-2, .photo-grid-3 { grid-template-columns:1fr 1fr; }
+
+  /* Showcase mobile */
+  .showcase-scroll { gap:0.4rem; padding:0.15rem 0 0.4rem; }
+  .showcase-card { flex:0 0 70%; min-width:140px; }
+  .showcase-card.featured { flex:0 0 85%; }
+  .showcase-header { padding:0.25rem 0.4rem; min-height:22px; }
+  .showcase-dots span { width:5px; height:5px; }
+  .showcase-title { font-size:0.5rem; }
+  .showcase-body { min-height:50px; }
+  .showcase-overlay { opacity:1; padding:0.3rem 0.4rem; background:linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 40%); }
+  .showcase-overlay span { font-size:0.6rem; }
+  .showcase-overlay small { font-size:0.5rem; }
+  .showcase-tags { padding:0.2rem 0.4rem; }
+  .showcase-tags span { font-size:0.45rem; padding:0.06rem 0.25rem; }
 }
 
 /* ---- Small Mobile ---- */
@@ -74,6 +92,11 @@
   .glass-panel { padding:0.6rem 1rem; }
   .cover-photo { height:280px; }
   .photo-item { min-height:35px; }
+  .showcase-card { flex:0 0 45%; }
+  .showcase-card.featured { flex:0 0 55%; }
+  .showcase-body { min-height:50px; }
+  .showcase-header { padding:0.2rem 0.4rem; min-height:20px; }
+  .showcase-tags { padding:0.15rem 0.4rem; }
   .stat-number { font-size:1.3rem; }
   .value-label { width:110px; font-size:0.75rem; }
   .value-number { font-size:0.85rem; }

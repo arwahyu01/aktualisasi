@@ -512,12 +512,12 @@
 
 <!-- ============ SLIDE 7: KEGIATAN 4 ============ -->
 <section class="slide" data-index="6">
-<div class="glass-panel">
-<div class="pagination"><span class="step">Kegiatan 4 / 6</span><span class="sep">|</span><span class="tag">Pengembangan</span></div>
+<div class="glass-panel" style="max-width:1200px;">
+<div class="pagination"><span class="step">Kegiatan 4 / 6</span><span class="sep">|</span><span class="tag">Pengembangan &amp; Penyempurnaan</span><span class="priority">⚡ Enhancement</span></div>
 <div class="accent-line"></div>
 <h2 class="section-title">Pengembangan dan Penyempurnaan Sistem</h2>
 
-<div class="col2 gap-sm">
+<div style="display:grid;grid-template-columns:1fr 1.5fr;gap:var(--space-md);">
   <div class="space-y-2">
     <div class="card reveal delay-1">
       <div class="card-label">Rincian Kegiatan</div>
@@ -525,8 +525,8 @@
         <li><span class="icon-check">✓</span> Penyempurnaan dashboard sistem</li>
         <li><span class="icon-check">✓</span> Penyempurnaan fitur monitoring</li>
         <li><span class="icon-check">✓</span> Penyempurnaan hak akses pengguna</li>
-        <li><span class="icon-check">✓</span> Penambahan fitur notifikasi email</li>
-        <li><span class="icon-check">✓</span> Penambahan fitur QR Code</li>
+        <li><span class="icon-check">✓</span> Penyempurnaan fitur notifikasi email</li>
+        <li><span class="icon-check">✓</span> Penambahan fitur resume LKH berbasis AI</li>
         <li><span class="icon-check">✓</span> Penyempurnaan UI/UX sistem</li>
       </ul>
     </div>
@@ -537,12 +537,73 @@
         <li><span class="icon-check">✓</span> Sistem lebih mudah digunakan</li>
       </ul>
     </div>
+    <div class="card reveal delay-2" style="padding:0.35rem 0.6rem;">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.3rem;text-align:center;">
+        <div><div style="font-size:0.8rem;font-weight:900;color:var(--gold);">3</div><div style="font-size:0.5rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;">Modul</div></div>
+        <div><div style="font-size:0.8rem;font-weight:900;color:var(--gold);">6</div><div style="font-size:0.5rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;">Fitur</div></div>
+        <div><div style="font-size:0.8rem;font-weight:900;color:var(--gold);">✓</div><div style="font-size:0.5rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;">Improve</div></div>
+      </div>
+    </div>
   </div>
-  <div class="reveal delay-3 space-y-2">
-    <div class="photo-grid photo-grid-3">
-      <div class="photo-item" style="min-height:60px;"><img src="assets/images/halaman login LKH.png" alt="Halaman Login E-LKH" loading="lazy"><span class="photo-badge">Screenshot</span></div>
-      <div class="photo-item" style="min-height:60px;"><img src="assets/images/halaman dashboard e-LKH.png" alt="Dashboard Sistem" loading="lazy"><span class="photo-badge">Screenshot</span></div>
-      <div class="photo-item" style="min-height:60px;"><img src="assets/images/hasil ringkasan AI untuk detail LKH pegawai.png" alt="Ringkasan AI" loading="lazy"><span class="photo-badge">Fitur</span></div>
+
+  <div class="reveal delay-3">
+    <div class="showcase-scroll">
+      <div class="showcase-card featured">
+        <div class="showcase-header">
+          <div class="showcase-dots"><span></span><span></span><span></span></div>
+          <div class="showcase-title">Dashboard E-LKH</div>
+        </div>
+        <div class="showcase-body">
+          <img src="assets/images/halaman dashboard e-LKH.png" alt="Dashboard Sistem" loading="lazy">
+          <div class="showcase-overlay">
+            <span>Dashboard Utama</span>
+            <small>Monitoring real-time &amp; rekap kinerja</small>
+          </div>
+        </div>
+        <div class="showcase-tags">
+          <span>Dashboard</span>
+          <span>Monitoring</span>
+          <span>Real-time</span>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <div class="showcase-header">
+          <div class="showcase-dots"><span></span><span></span><span></span></div>
+          <div class="showcase-title">Halaman Login</div>
+        </div>
+        <div class="showcase-body">
+          <img src="assets/images/halaman login LKH.png" alt="Halaman Login E-LKH" loading="lazy">
+          <div class="showcase-overlay">
+            <span>Autentikasi ASN</span>
+            <small>Login aman dengan akses terbatas</small>
+          </div>
+        </div>
+        <div class="showcase-tags">
+          <span>Login</span>
+          <span>SSO</span>
+          <span>Hak Akses</span>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <div class="showcase-header">
+          <div class="showcase-dots"><span></span><span></span><span></span></div>
+          <div class="showcase-title">Resume AI</div>
+        </div>
+        <div class="showcase-body">
+          <img src="assets/images/hasil ringkasan AI untuk detail LKH pegawai.png" alt="Ringkasan AI" loading="lazy">
+          <div class="showcase-overlay">
+            <span>AI Summary</span>
+            <small>Ringkasan otomatis detail LKH pegawai</small>
+          </div>
+        </div>
+        <div class="showcase-tags">
+          <span>AI</span>
+          <span>Ringkasan</span>
+          <span>Otomatis</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -894,21 +955,21 @@
       category:'Method',
       title:'Metode — Standar Pelaporan',
       desc:'Belum tersedia format laporan kinerja harian yang baku dan seragam.',
-      impact:'Data sulit direkapitulasi, verifikasi pimpinan tidak konsisten',
+      impact:'Data sulit direkapitulasi, format laporan tidak konsisten',
       guidance:'Penyusunan format standar LKH yang ditetapkan secara resmi'
     },
     sistem: {
       category:'Machine',
       title:'Sistem — Infrastruktur Digital',
       desc:'Belum adanya sistem pelaporan kinerja harian ASN berbasis digital dan terintegrasi.',
-      impact:'Data tersebar (Excel manual), monitoring tidak real-time, rawan temuan audit',
+      impact:'Data tersebar (Excel manual), monitoring tidak real-time, risiko kehilangan data',
       guidance:'Pengembangan sistem digital E-LKH berbasis Google Apps Script'
     },
     monitoring: {
       category:'Pengawasan',
       title:'Monitoring — Verifikasi & Evaluasi',
       desc:'Monitoring dan evaluasi pelaporan oleh atasan belum berjalan optimal.',
-      impact:'Approval lambat, monitoring kinerja tidak real-time',
+      impact:'Pimpinan kesulitan memantau kinerja harian ASN secara efektif, evaluasi kinerja tidak akurat',
       guidance:'Sistem verifikasi dan approval digital terintegrasi dengan dashboard'
     }
   };
