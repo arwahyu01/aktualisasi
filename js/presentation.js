@@ -94,9 +94,25 @@
     }
   });
 
+  // --- Helper: find nearest scrollable ancestor ---
+  function getScrollableParent(el) {
+    while (el && el !== document.documentElement) {
+      const style = window.getComputedStyle(el);
+      const ov = style.overflowY + style.overflow;
+      if ((ov.indexOf('auto') !== -1 || ov.indexOf('scroll') !== -1) && el.scrollHeight > el.clientHeight + 2) {
+        return el;
+      }
+      el = el.parentElement;
+    }
+    return null;
+  }
+
   // --- Mouse Wheel ---
   let wheelTimeout = false;
   document.addEventListener('wheel', function(e) {
+    // Don't hijack wheel if target is inside a scrollable container
+    if (getScrollableParent(e.target)) return;
+
     e.preventDefault();
     if (wheelTimeout) return;
     wheelTimeout = true;
@@ -111,11 +127,16 @@
 
   // --- Touch Support ---
   let touchStartY = 0;
+  let touchTarget = null;
   document.addEventListener('touchstart', function(e) {
     touchStartY = e.changedTouches[0].screenY;
+    touchTarget = e.target;
   }, { passive: true });
 
   document.addEventListener('touchend', function(e) {
+    // Don't navigate if touch started inside a scrollable container
+    if (getScrollableParent(touchTarget)) return;
+
     const diff = touchStartY - e.changedTouches[0].screenY;
     if (Math.abs(diff) > 40) {
       goTo(diff > 0 ? current + 1 : current - 1);
