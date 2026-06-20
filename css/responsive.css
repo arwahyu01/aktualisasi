@@ -85,6 +85,18 @@
   .showcase-overlay small { font-size:0.5rem; }
   .showcase-tags { padding:0.2rem 0.4rem; }
   .showcase-tags span { font-size:0.45rem; padding:0.06rem 0.25rem; }
+  .photo-item > div:last-child {
+    top:0.22rem; left:0.22rem; right:0.22rem;
+    font-size:0.42rem; padding:0.1rem 0.25rem;
+  }
+  section[data-index="3"] .badge-berakhlak,
+  section[data-index="4"] .badge-berakhlak,
+  section[data-index="5"] .badge-berakhlak,
+  section[data-index="6"] .badge-berakhlak,
+  section[data-index="7"] .badge-berakhlak,
+  section[data-index="8"] .badge-berakhlak {
+    font-size:0.42rem; padding:0.06rem 0.22rem;
+  }
 }
 
 /* ---- Small Mobile ---- */
@@ -93,9 +105,19 @@
   .glass-panel { padding:0.4rem 0.6rem; border-radius:var(--radius-sm); max-height:84vh; }
   .photo-grid-2, .photo-grid-3, .photo-grid-4 { grid-template-columns:1fr 1fr; }
   .photo-item { min-height:35px; }
+  .photo-item > div:last-child {
+    top:0.18rem; left:0.18rem; right:0.18rem;
+    font-size:0.36rem; padding:0.06rem 0.18rem;
+  }
   .photo-item .placeholder-icon { font-size:1rem; }
   .stats-grid { grid-template-columns:1fr 1fr; gap:0.3rem; }
   .feat-grid { grid-template-columns:1fr 1fr; }
+  section[data-index="3"] .badge-berakhlak,
+  section[data-index="4"] .badge-berakhlak,
+  section[data-index="5"] .badge-berakhlak,
+  section[data-index="6"] .badge-berakhlak,
+  section[data-index="7"] .badge-berakhlak,
+  section[data-index="8"] .badge-berakhlak { font-size:0.4rem; padding:0.05rem 0.18rem; }
   .value-label { width:60px; font-size:0.65rem; }
   .value-number { width:1.8rem; font-size:0.8rem; }
   .value-track { height:8px; }
@@ -118,6 +140,10 @@
   .glass-panel { padding:0.6rem 1rem; }
   .cover-photo { height:280px; }
   .photo-item { min-height:35px; }
+  .photo-item > div:last-child {
+    top:0.18rem; left:0.18rem; right:0.18rem;
+    font-size:0.36rem; padding:0.06rem 0.18rem;
+  }
   .showcase-body { min-height:40px; }
   .showcase-header { padding:0.2rem 0.4rem; min-height:20px; }
   .showcase-card.compact .showcase-body { min-height:22px; }
@@ -216,6 +242,10 @@
     --title-lg: clamp(1rem, 2vw, 1.3rem);
   }
   .photo-item { min-height:25px; aspect-ratio:16/9; }
+  .photo-item > div:last-child {
+    top:0.12rem; left:0.12rem; right:0.12rem;
+    font-size:0.32rem; padding:0.05rem 0.15rem;
+  }
   .photo-item .placeholder-icon { font-size:0.8rem; }
   .photo-item .placeholder-label { display:none; }
   .global-header { padding:0.2rem 0.5rem; }
