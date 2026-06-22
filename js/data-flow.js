@@ -54,7 +54,7 @@
 
     setSlide(index) {
       const intensities = [
-        1.0, 0.5, 0.6, 0.5, 0.5, 0.8,
+        1.0, 0.6, 0.5, 0.5, 0.8,
         0.5, 0.5, 0.5, 1.1, 1.2, 0.3
       ];
       this.intensity = intensities[index] || 0.6;

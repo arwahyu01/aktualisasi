@@ -58,11 +58,11 @@
     if (progressBar) progressBar.style.width = ((index + 1) / total * 100) + '%';
 
     // Trigger animations
-    const triggers = [7, 9, 10]; // slides with counters
+    const triggers = [6, 8, 9]; // slides with counters
     if (triggers.includes(index)) {
       setTimeout(runCounters, 400);
     }
-    if (index === 10) { // BerAKHLAK slide
+    if (index === 9) { // BerAKHLAK slide
       setTimeout(runBarFills, 400);
     }
 
