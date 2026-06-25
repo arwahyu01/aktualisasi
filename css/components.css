@@ -907,6 +907,7 @@ section[data-index="7"] .satisfaction-card > div:nth-child(4) .badge-berakhlak {
 }
 .badge-berakhlak:hover { background:rgba(212,175,55,0.15); transform:translateY(-1px); }
 
+section[data-index="1"] .badge-berakhlak,
 section[data-index="2"] .badge-berakhlak,
 section[data-index="3"] .badge-berakhlak,
 section[data-index="4"] .badge-berakhlak,
@@ -921,6 +922,7 @@ section[data-index="7"] .badge-berakhlak {
   letter-spacing:0.03em;
 }
 
+section[data-index="1"] .card,
 section[data-index="2"] .card,
 section[data-index="3"] .card,
 section[data-index="4"] .card,
