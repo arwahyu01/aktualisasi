@@ -26,22 +26,22 @@
   --glow-red: rgba(200,16,46,0.15);
   --glow-gold: rgba(212,175,55,0.12);
 
-  /* Typography */
+  /* Typography — enlarged for monitor/projector readability */
   --font: 'Plus Jakarta Sans', sans-serif;
-  --title-xl: clamp(2.8rem, 4.5vw, 4.5rem);
-  --title-lg: clamp(1.8rem, 2.8vw, 2.5rem);
-  --title-md: clamp(1.2rem, 1.8vw, 1.5rem);
-  --body-lg: clamp(1.1rem, 1.4vw, 1.2rem);
-  --body-md: clamp(0.95rem, 1.2vw, 1.05rem);
-  --body-sm: clamp(0.85rem, 1.1vw, 0.95rem);
-  --label: clamp(0.72rem, 0.9vw, 0.82rem);
+  --title-xl: clamp(3.2rem, 5vw, 5rem);
+  --title-lg: clamp(2rem, 3.2vw, 2.8rem);
+  --title-md: clamp(1.3rem, 2vw, 1.7rem);
+  --body-lg: clamp(1.15rem, 1.6vw, 1.35rem);
+  --body-md: clamp(1rem, 1.3vw, 1.15rem);
+  --body-sm: clamp(0.92rem, 1.2vw, 1.05rem);
+  --label: clamp(0.8rem, 1vw, 0.92rem);
 
   /* Spacing */
-  --space-xs: 0.3rem;
-  --space-sm: 0.6rem;
-  --space-md: 1.2rem;
-  --space-lg: 1.8rem;
-  --space-xl: 2.4rem;
+  --space-xs: 0.4rem;
+  --space-sm: 0.7rem;
+  --space-md: 1.3rem;
+  --space-lg: 2rem;
+  --space-xl: 2.6rem;
 
   /* Radius */
   --radius-sm: 0.5rem;

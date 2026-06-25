@@ -24,7 +24,6 @@
 
 <body>
 
-  <!-- ===== CINEMATIC BACKGROUND SYSTEM ===== -->
   <div class="ambient-base"></div>
   <div class="opening-flash" id="openingFlash"></div>
   <div class="twinkle-field">
@@ -91,10 +90,8 @@
   <div class="light-beam-sweep"></div>
   <div class="cinema-bars"></div>
 
-  <!-- ===== PROGRESS BAR ===== -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- ===== HEADER ===== -->
   <header class="global-header">
     <div class="global-header-left">
       <img class="header-garuda" src="assets/garuda.png" alt="Garuda">
@@ -107,19 +104,16 @@
     </div>
   </header>
 
-  <!-- ===== NAV DOTS ===== -->
   <nav class="nav-dots" id="navDots"></nav>
 
-  <!-- ===== SLIDE COUNTER ===== -->
   <div class="slide-counter"><span class="current" id="currentSlide">01</span> / <span id="totalSlides">6</span></div>
 
-  <!-- ===== SLIDES ===== -->
   <div class="slide-wrap">
     <div class="slide-track" id="slideTrack">
 
-      <!-- ============ SLIDE 0: COVER ============ -->
+      <!-- ==================== SLIDE 0: COVER ==================== -->
       <section class="slide" data-index="0">
-        <div class="glass-panel" style="max-width:1200px;padding:1.4rem 1.8rem">
+        <div class="glass-panel" style="max-width:1200px;">
           <div class="cover-grid">
             <div class="cover-photo reveal">
               <div class="cover-photo-bg">
@@ -141,7 +135,7 @@
               </div>
               <div class="cover-subtitle">
                 Melalui Pengembangan Sistem <strong>E-LKH</strong><br>
-                <span style="font-size:var(--body-sm);letter-spacing:0.12em;font-weight:700;color:var(--text-muted);text-transform:uppercase;">KPU Kabupaten Siak</span>
+                <span class="cover-instansi">KPU Kabupaten Siak</span>
               </div>
               <div class="cover-info">
                 <span>Jabatan:</span> Penata Kelola Sistem dan Teknologi Informasi
@@ -166,236 +160,261 @@
         </div>
       </section>
 
-      <!-- ============ SLIDE 1: KEGIATAN 3 ============ -->
+      <!-- ==================== SLIDE 1: KEGIATAN 3 ==================== -->
       <section class="slide" data-index="1">
-        <div class="glass-panel" style="max-width:1150px;">
+        <div class="glass-panel" style="max-width:1200px;">
           <div class="pagination"><span class="step">Kegiatan Inti 1</span><span class="sep">|</span><span class="tag">Kegiatan 3 — Pembangunan Sistem</span></div>
           <div class="accent-line"></div>
           <h2 class="section-title">Kegiatan 3: Pembangunan Sistem E-LKH</h2>
 
-          <div style="display:grid;grid-template-columns:1.1fr 1.9fr;gap:0.5rem;">
-            <div style="display:flex;flex-direction:column;gap:0.35rem;">
-              <div class="card reveal delay-1" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Tujuan</div>
-                <p style="font-size:var(--body-sm);color:var(--text-secondary);margin:0;">Mengembangkan sistem E-LKH berbasis digital</p>
+          <!-- Row: Tujuan + Tahapan + Output (left) | Eviden + Nilai (right) -->
+          <div class="activity-layout">
+
+            <!-- Left Column: Tujuan, Tahapan, Output -->
+            <div class="activity-left">
+              <div class="card reveal delay-1">
+                <div class="card-label">Tujuan</div>
+                <p class="card-text">Mengembangkan sistem E-LKH berbasis digital untuk menggantikan proses manual</p>
               </div>
-              <div class="card reveal delay-2" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Tahapan</div>
-                <ul class="card-list" style="font-size:var(--body-sm);">
-                  <li><span class="icon-check">✓</span> Perancangan sistem (flowchart, use case, database)</li>
-                  <li><span class="icon-check">✓</span> Pengembangan (Google Apps Script & Spreadsheet)</li>
-                  <li><span class="icon-check">✓</span> Uji fungsi internal</li>
-                  <li><span class="icon-check">✓</span> Penyempurnaan sistem</li>
-                </ul>
+
+              <div class="card reveal delay-2">
+                <div class="card-label">Tahapan <span class="step-hint">klik untuk lihat eviden</span></div>
+                <ol class="step-list">
+                  <li data-evidence="assets/images/usecase diagram Kegiatan 3.png,assets/images/Rancangan Database e-LKH Kegiatan 3.png,assets/images/flowchart pengelolaan LKH.png,assets/images/flowchart login Kegiatan 3.png,assets/images/flowchart monitoring Kegiatan 3.png,assets/images/flowchart verifikasi laporan Kegiatan 3.png,assets/images/konsultasi dengan mentor terkait rancangan sistem kegiatan 3.jpg,assets/images/before after e-LKH kegiatan 3.png,assets/images/daftar kebutuhan fitur sistem E-LKH 1 kegiatan 1.png,assets/images/daftar kebutuhan fitur sistem E-LKH 2 kegiatan 1.png,assets/images/daftar kebutuhan fitur sistem E-LKH 3 kegiatan 1.png,assets/images/Diskusi dengan mentor antasan dan pengguna LKH kegiatan 1.png,assets/images/Notulensi Kebutuhan Pengguna Kegiatan 1.png,assets/images/meminta izin mentor untuk melakukan aktualisasi kegiatan 1.png,assets/images/Dokumen persetujuan aktualisasi kegiatan 1.png,assets/images/Dokumentasi pengkajian format LKH lama Kegiatan 2.png,assets/images/Dokumentasi penyusunan draft format LKH baru Kegiatan 2.png,assets/images/Dokumentasi konsultasi dan validasi dengan atasanmentor Kegiatan 2.png,assets/images/Dokumentasi Konsultasi dengan Kasubag Parhumas dan SDM Kegiatan 2.png,assets/images/lembar persetujuan format baru Kegiatan 2.png" data-evidence-label="Perancangan Sistem">
+                    <span class="step-num">1</span>
+                    <span class="step-text">Perancangan sistem (flowchart, use case, database)</span>
+                  </li>
+                  <li data-evidence="assets/images/coding e-lkh kegiatan 3.png,assets/images/source fitur login pengguna kegiatan 3.png,assets/images/pengembangan fitur notifikasi email kegiatan 3.png,assets/images/halaman dashboard e-LKH Kegiatan 3.png,assets/images/form input LKH kegiatan 3.png,assets/images/tampilan halaman login LKH Kegiatan 3.png,assets/images/fitur reset password kegiatan 3.png,assets/images/fitur monitoring laporan pegawai kegiatan 3.png" data-evidence-label="Pengembangan Sistem">
+                    <span class="step-num">2</span>
+                    <span class="step-text">Pengembangan (Google Apps Script &amp; Spreadsheet)</span>
+                  </li>
+                  <li data-evidence="assets/images/pengujian internal LKH kegiatan 3.png,assets/images/proses uji fungsi internal sistem kegiatan 3.png,assets/images/tampilan fitur pengajuan serta verifikasi LHK kegiatan 3.png,assets/images/hasil verifikasi dokumen dengan qrcode kegiatan 3.png,assets/images/notifikasi email kegiatan 3.png,assets/images/hasil ringkasan AI untuk detail LKH pegawai Kegiatan 3.png" data-evidence-label="Uji Fungsi Internal">
+                    <span class="step-num">3</span>
+                    <span class="step-text">Uji fungsi internal</span>
+                  </li>
+                  <li data-evidence="assets/images/monitoring kegiatan 3.png,assets/images/pengelolaan hak akses pengguna kegiatan 3.png,assets/images/penyempurnaan tampilan dan optimalisasi kegiatan 3.jpg" data-evidence-label="Penyempurnaan Sistem">
+                    <span class="step-num">4</span>
+                    <span class="step-text">Penyempurnaan sistem</span>
+                  </li>
+                </ol>
               </div>
-              <div class="card reveal delay-3" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Output</div>
-                <ul class="card-list" style="font-size:var(--body-sm);">
-                  <li><span class="icon-check">✓</span> Sistem E-LKH versi awal</li>
-                  <li><span class="icon-check">✓</span> Struktur database</li>
-                  <li><span class="icon-check">✓</span> Flowchart, use case, relationship diagram</li>
-                </ul>
+
+              <div class="card reveal delay-3">
+                <div class="card-label">Output</div>
+                <ol class="step-list">
+                  <li><span class="step-num">✓</span> Sistem E-LKH versi awal</li>
+                  <li><span class="step-num">✓</span> Struktur database</li>
+                  <li><span class="step-num">✓</span> Flowchart, use case, relationship diagram</li>
+                </ol>
               </div>
-              <div class="card reveal delay-4" style="padding:0.4rem 0.5rem;border-color:rgba(212,175,55,0.15);">
-                <div class="card-label" style="margin-bottom:0.2rem;">Nilai BerAKHLAK Dominan</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;margin-bottom:0.3rem;">
-                  <div style="padding:0.35rem;background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.03));border:1px solid rgba(16,185,129,0.2);border-radius:0.5rem;text-align:center;">
-                    <div style="font-size:0.8rem;margin-bottom:0.05rem;">💻</div>
-                    <div style="font-size:0.7rem;font-weight:800;color:#6ee7b7;">Kompeten</div>
-                    <div style="font-size:0.5rem;color:rgba(255,255,255,0.5);margin:0.05rem 0;letter-spacing:0.02em;">⭐⭐⭐⭐</div>
-                    <div style="font-size:0.48rem;color:var(--text-muted);line-height:1.3;">Mengembangkan sistem melalui kemampuan teknis, analisis, dan pemecahan masalah</div>
+            </div>
+
+            <!-- Right Column: Eviden -->
+            <div class="activity-right">
+              <div class="card reveal delay-4 evidence-card">
+                <div class="card-label">Eviden</div>
+                <div class="evidence-grid">
+                  <div class="photo-item">
+                    <img src="assets/images/halaman dashboard e-LKH Kegiatan 3.png" alt="Dashboard E-LKH">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E1</span>
+                      <span class="evidence-type">Dashboard</span>
+                      <span class="evidence-title">Halaman utama sistem</span>
+                    </div>
                   </div>
-                  <div style="padding:0.35rem;background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(245,158,11,0.03));border:1px solid rgba(245,158,11,0.2);border-radius:0.5rem;text-align:center;">
-                    <div style="font-size:0.8rem;margin-bottom:0.05rem;">🚀</div>
-                    <div style="font-size:0.7rem;font-weight:800;color:#fbbf24;">Adaptif</div>
-                    <div style="font-size:0.5rem;color:rgba(255,255,255,0.5);margin:0.05rem 0;letter-spacing:0.02em;">⭐⭐⭐⭐</div>
-                    <div style="font-size:0.48rem;color:var(--text-muted);line-height:1.3;">Menghasilkan inovasi digital dan mampu beradaptasi terhadap perubahan proses kerja</div>
+                  <div class="photo-item">
+                    <img src="assets/images/form input LKH kegiatan 3.png" alt="Form input LKH">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E2</span>
+                      <span class="evidence-type">Input</span>
+                      <span class="evidence-title">Form laporan harian</span>
+                    </div>
                   </div>
-                </div>
-                <div style="display:flex;flex-wrap:wrap;gap:0.1rem;justify-content:center;">
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Akuntabel</span>
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Kolaboratif</span>
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Berorientasi Pelayanan</span>
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Harmonis</span>
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Loyal</span>
-                </div>
-                <div style="margin-top:0.2rem;padding:0.15rem 0.3rem;background:rgba(212,175,55,0.03);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.06);">
-                  <p style="font-size:0.48rem;color:var(--text-muted);text-align:center;margin:0;line-height:1.3;font-style:italic;">"Pengembangan Sistem E-LKH menunjukkan dominasi nilai Kompeten dan Adaptif melalui proses perancangan, pengembangan, pengujian, dan penyempurnaan sistem."</p>
+                  <div class="photo-item">
+                    <img src="assets/images/tampilan halaman login LKH Kegiatan 3.png" alt="Halaman login">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E3</span>
+                      <span class="evidence-type">Login</span>
+                      <span class="evidence-title">Halaman autentikasi</span>
+                    </div>
+                  </div>
+                  <div class="photo-item">
+                    <img src="assets/images/tampilan fitur pengajuan serta verifikasi LHK kegiatan 3.png" alt="Fitur pengajuan dan verifikasi">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E4</span>
+                      <span class="evidence-type">Verifikasi</span>
+                      <span class="evidence-title">Pengajuan &amp; approval</span>
+                    </div>
+                  </div>
+                  <div class="photo-item">
+                    <img src="assets/images/hasil verifikasi dokumen dengan qrcode kegiatan 3.png" alt="QR Code verifikasi">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E5</span>
+                      <span class="evidence-type">QR Code</span>
+                      <span class="evidence-title">Verifikasi dokumen</span>
+                    </div>
+                  </div>
+                  <div class="photo-item">
+                    <img src="assets/images/notifikasi email kegiatan 3.png" alt="Notifikasi email">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E6</span>
+                      <span class="evidence-type">Notifikasi</span>
+                      <span class="evidence-title">Email otomatis</span>
+                    </div>
+                  </div>
+                  <div class="photo-item">
+                    <img src="assets/images/monitoring kegiatan 3.png" alt="Monitoring">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E7</span>
+                      <span class="evidence-type">Monitoring</span>
+                      <span class="evidence-title">Dashboard monitoring</span>
+                    </div>
+                  </div>
+                  <div class="photo-item">
+                    <img src="assets/images/pengelolaan hak akses pengguna kegiatan 3.png" alt="Hak akses">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E8</span>
+                      <span class="evidence-type">Akses</span>
+                      <span class="evidence-title">Pengelolaan pengguna</span>
+                    </div>
+                  </div>
+                  <div class="photo-item">
+                    <img src="assets/images/coding e-lkh kegiatan 3.png" alt="Coding">
+                    <div class="evidence-label">
+                      <span class="evidence-code">E9</span>
+                      <span class="evidence-type">Coding</span>
+                      <span class="evidence-title">Google Apps Script</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-            </div>
-            <div class="card reveal delay-6" style="padding:0.4rem 0.5rem;">
-              <div class="card-label" style="margin-bottom:0.15rem;">Eviden</div>
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.25rem;">
-                <div class="photo-item">
-                  <img src="assets/images/halaman dashboard e-LKH Kegiatan 3.png" alt="Dashboard E-LKH" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E1</span>
-                    <span class="evidence-type">Dashboard</span>
-                    <span class="evidence-title">Halaman utama sistem</span>
+              <!-- Bottom row: Nilai BerAKHLAK + Fitur -->
+              <div class="activity-bottom-row">
+                <div class="card reveal delay-5 nilai-card">
+                  <div class="card-label">Nilai BerAKHLAK Dominan</div>
+                  <div class="nilai-grid">
+                    <div class="nilai-item kompeten">
+                      <div class="nilai-icon">💻</div>
+                      <div class="nilai-name">Kompeten</div>
+                      <div class="nilai-desc">Mengembangkan sistem melalui kemampuan teknis, analisis, dan pemecahan masalah</div>
+                    </div>
+                    <div class="nilai-item adaptif">
+                      <div class="nilai-icon">🚀</div>
+                      <div class="nilai-name">Adaptif</div>
+                      <div class="nilai-desc">Menghasilkan inovasi digital dan mampu beradaptasi terhadap perubahan proses kerja</div>
+                    </div>
                   </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/form input LKH kegiatan 3.png" alt="Form input LKH" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E2</span>
-                    <span class="evidence-type">Input</span>
-                    <span class="evidence-title">Form laporan harian</span>
+                  <div class="badge-row">
+                    <span class="badge-berakhlak">Akuntabel</span>
+                    <span class="badge-berakhlak">Kolaboratif</span>
+                    <span class="badge-berakhlak">Berorientasi Pelayanan</span>
+                    <span class="badge-berakhlak">Harmonis</span>
+                    <span class="badge-berakhlak">Loyal</span>
                   </div>
+                  <div class="nilai-quote">"Pengembangan Sistem E-LKH menunjukkan dominasi nilai Kompeten dan Adaptif melalui proses perancangan, pengembangan, pengujian, dan penyempurnaan sistem."</div>
                 </div>
-                <div class="photo-item">
-                  <img src="assets/images/tampilan halaman login LKH Kegiatan 3.png" alt="Halaman login" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E3</span>
-                    <span class="evidence-type">Login</span>
-                    <span class="evidence-title">Halaman autentikasi</span>
-                  </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/tampilan fitur pengajuan serta verifikasi LHK kegiatan 3.png" alt="Fitur pengajuan dan verifikasi" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E4</span>
-                    <span class="evidence-type">Verifikasi</span>
-                    <span class="evidence-title">Pengajuan & approval</span>
-                  </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/hasil verifikasi dokumen dengan qrcode kegiatan 3.png" alt="QR Code verifikasi" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E5</span>
-                    <span class="evidence-type">QR Code</span>
-                    <span class="evidence-title">Verifikasi dokumen</span>
-                  </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/notifikasi email kegiatan 3.png" alt="Notifikasi email" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E6</span>
-                    <span class="evidence-type">Notifikasi</span>
-                    <span class="evidence-title">Email otomatis</span>
-                  </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/monitoring kegiatan 3.png" alt="Monitoring" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E7</span>
-                    <span class="evidence-type">Monitoring</span>
-                    <span class="evidence-title">Dashboard monitoring</span>
-                  </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/pengelolaan hak akses pengguna kegiatan 3.png" alt="Hak akses" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E8</span>
-                    <span class="evidence-type">Akses</span>
-                    <span class="evidence-title">Pengelolaan pengguna</span>
-                  </div>
-                </div>
-                <div class="photo-item">
-                  <img src="assets/images/coding e-lkh kegiatan 3.png" alt="Coding" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
-                  <div class="evidence-label">
-                    <span class="evidence-code">E9</span>
-                    <span class="evidence-type">Coding</span>
-                    <span class="evidence-title">Google Apps Script</span>
+
+                <div class="card reveal delay-6 fitur-card">
+                  <div class="card-label">Fitur</div>
+                  <div class="fitur-grid">
+                    <div class="fitur-item"><span>🔐</span> Login</div>
+                    <div class="fitur-item"><span>📝</span> Input Laporan</div>
+                    <div class="fitur-item"><span>📊</span> Dashboard Monitoring</div>
+                    <div class="fitur-item"><span>✅</span> Approval / Verifikasi</div>
+                    <div class="fitur-item"><span>👤</span> Hak Akses</div>
+                    <div class="fitur-item"><span>📧</span> Notifikasi Email</div>
+                    <div class="fitur-item"><span>📱</span> QR Code Verifikasi</div>
+                    <div class="fitur-item"><span>📋</span> Rekapitulasi</div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card reveal delay-5" style="padding:0.4rem 0.5rem;">
-              <div class="card-label" style="margin-bottom:0.15rem;">Fitur</div>
-              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.2rem;">
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">🔐</span> Login</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">📝</span> Input Laporan</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">📊</span> Dashboard Monitoring</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">✅</span> Approval/Verifikasi</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">👤</span> Hak Akses</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">📧</span> Notifikasi Email</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">📱</span> QR Code Verifikasi</div>
-                <div style="padding:0.2rem;background:rgba(212,175,55,0.04);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.1);text-align:center;font-size:0.6rem;"><span style="color:var(--gold);">📋</span> Rekapitulasi</div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
 
-      <!-- ============ SLIDE 2: KEGIATAN 4 ============ -->
+      <!-- ==================== SLIDE 2: KEGIATAN 4 ==================== -->
       <section class="slide" data-index="2">
-        <div class="glass-panel" style="max-width:1100px;">
-          <div class="pagination"><span class="step">Kegiatan Inti 2</span><span class="sep">|</span><span class="tag">Kegiatan 4 — Uji Coba & Sosialisasi</span></div>
+        <div class="glass-panel" style="max-width:1200px;">
+          <div class="pagination"><span class="step">Kegiatan Inti 2</span><span class="sep">|</span><span class="tag">Kegiatan 4 — Uji Coba &amp; Sosialisasi</span></div>
           <div class="accent-line"></div>
           <h2 class="section-title">Kegiatan 4: Uji Coba dan Sosialisasi Sistem</h2>
 
-          <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:0.5rem;">
-            <div style="display:flex;flex-direction:column;gap:0.35rem;">
-              <div class="card reveal delay-1" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Tujuan</div>
-                <p style="font-size:var(--body-sm);color:var(--text-secondary);margin:0;">Memastikan sistem dapat digunakan dan dipahami pengguna</p>
+          <div class="activity-layout">
+
+            <!-- Left Column -->
+            <div class="activity-left">
+              <div class="card reveal delay-1">
+                <div class="card-label">Tujuan</div>
+                <p class="card-text">Memastikan sistem dapat digunakan dan dipahami oleh seluruh pengguna</p>
               </div>
-              <div class="card reveal delay-2" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Tahapan</div>
-                <ul class="card-list" style="font-size:var(--body-sm);">
-                  <li><span class="icon-check">✓</span> Uji coba bersama pengguna</li>
-                  <li><span class="icon-check">✓</span> Sosialisasi sistem E-LKH</li>
-                  <li><span class="icon-check">✓</span> Pendampingan pengguna</li>
-                  <li><span class="icon-check">✓</span> Pengumpulan masukan</li>
-                </ul>
+
+              <div class="card reveal delay-2">
+                <div class="card-label">Tahapan <span class="step-hint">klik untuk lihat eviden</span></div>
+                <ol class="step-list">
+                  <li data-evidence="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.jpg,assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png" data-evidence-label="Uji Coba Pengguna">
+                    <span class="step-num">1</span>
+                    <span class="step-text">Uji coba bersama pengguna</span>
+                  </li>
+                  <li data-evidence="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.jpg,assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png" data-evidence-label="Sosialisasi E-LKH">
+                    <span class="step-num">2</span>
+                    <span class="step-text">Sosialisasi sistem E-LKH</span>
+                  </li>
+                  <li data-evidence="assets/images/dokumentasi pendampingan pengguna e-LKH kegiatan 4.jpg" data-evidence-label="Pendampingan Pengguna">
+                    <span class="step-num">3</span>
+                    <span class="step-text">Pendampingan pengguna</span>
+                  </li>
+                  <li data-evidence="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.jpg,assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png,assets/images/dokumentasi pendampingan pengguna e-LKH kegiatan 4.jpg,assets/images/rekap masukan pengguna kegiatan 4.png" data-evidence-label="Pengumpulan Masukan">
+                    <span class="step-num">4</span>
+                    <span class="step-text">Pengumpulan masukan</span>
+                  </li>
+                </ol>
               </div>
-              <div class="card reveal delay-3" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Output</div>
-                <ul class="card-list" style="font-size:var(--body-sm);">
-                  <li><span class="icon-check">✓</span> Catatan uji coba</li>
-                  <li><span class="icon-check">✓</span> Daftar hadir sosialisasi</li>
-                  <li><span class="icon-check">✓</span> Rekap masukan pengguna</li>
-                </ul>
+
+              <div class="card reveal delay-3">
+                <div class="card-label">Output</div>
+                <ol class="step-list">
+                  <li><span class="step-num">✓</span> Catatan uji coba</li>
+                  <li><span class="step-num">✓</span> Daftar hadir sosialisasi</li>
+                  <li><span class="step-num">✓</span> Rekap masukan pengguna</li>
+                </ol>
               </div>
-              <div class="card reveal delay-4" style="padding:0.4rem 0.5rem;border-color:rgba(16,185,129,0.12);">
-                <div class="card-label" style="margin-bottom:0.2rem;">Nilai BerAKHLAK Dominan</div>
-                <div style="padding:0.35rem;background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(59,130,246,0.03));border:1px solid rgba(59,130,246,0.2);border-radius:0.5rem;text-align:center;margin-bottom:0.3rem;">
-                  <div style="font-size:1rem;margin-bottom:0.05rem;">🤝</div>
-                  <div style="font-size:0.75rem;font-weight:800;color:#60a5fa;">Kolaboratif</div>
-                  <div style="font-size:0.55rem;color:rgba(255,255,255,0.5);margin:0.05rem 0;letter-spacing:0.02em;">⭐⭐⭐</div>
-                  <div style="font-size:0.5rem;color:var(--text-muted);line-height:1.3;padding:0 0.2rem;">Keberhasilan implementasi E-LKH dicapai melalui kerja sama, sosialisasi, pendampingan, dan komunikasi aktif dengan seluruh pengguna</div>
+
+              <div class="card reveal delay-4 nilai-card">
+                <div class="card-label">Nilai BerAKHLAK Dominan</div>
+                <div class="nilai-item kolaboratif" style="margin-bottom:0.5rem;">
+                  <div class="nilai-icon">🤝</div>
+                  <div class="nilai-name">Kolaboratif</div>
+                  <div class="nilai-desc">Keberhasilan implementasi E-LKH dicapai melalui kerja sama, sosialisasi, pendampingan, dan komunikasi aktif dengan seluruh pengguna</div>
                 </div>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.15rem;margin-bottom:0.2rem;">
-                  <div style="padding:0.2rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:0.3rem;text-align:center;">
-                    <div style="font-size:0.65rem;margin-bottom:0.02rem;">👥</div>
-                    <div style="font-size:0.55rem;font-weight:700;color:var(--text-secondary);">Harmonis</div>
-                    <div style="font-size:0.4rem;color:rgba(255,255,255,0.3);">⭐⭐</div>
-                  </div>
-                  <div style="padding:0.2rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:0.3rem;text-align:center;">
-                    <div style="font-size:0.65rem;margin-bottom:0.02rem;">🎯</div>
-                    <div style="font-size:0.55rem;font-weight:700;color:var(--text-secondary);">Berorientasi Pelayanan</div>
-                    <div style="font-size:0.4rem;color:rgba(255,255,255,0.3);">⭐⭐</div>
-                  </div>
-                  <div style="padding:0.2rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:0.3rem;text-align:center;">
-                    <div style="font-size:0.65rem;margin-bottom:0.02rem;">🚀</div>
-                    <div style="font-size:0.55rem;font-weight:700;color:var(--text-secondary);">Adaptif</div>
-                    <div style="font-size:0.4rem;color:rgba(255,255,255,0.3);">⭐⭐</div>
-                  </div>
+                <div class="nilai-mini-grid">
+                  <div class="nilai-mini"><span>👥</span> Harmonis</div>
+                  <div class="nilai-mini"><span>🎯</span> Berorientasi Pelayanan</div>
+                  <div class="nilai-mini"><span>🚀</span> Adaptif</div>
                 </div>
-                <div style="display:flex;flex-wrap:wrap;gap:0.1rem;justify-content:center;">
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Akuntabel</span>
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Kompeten</span>
-                  <span class="badge-berakhlak" style="font-size:0.45rem;padding:0.05rem 0.2rem;">Loyal</span>
+                <div class="badge-row">
+                  <span class="badge-berakhlak">Akuntabel</span>
+                  <span class="badge-berakhlak">Kompeten</span>
+                  <span class="badge-berakhlak">Loyal</span>
                 </div>
-                <div style="margin-top:0.15rem;padding:0.15rem 0.3rem;background:rgba(212,175,55,0.03);border-radius:0.3rem;border:1px solid rgba(212,175,55,0.06);">
-                  <p style="font-size:0.48rem;color:var(--text-muted);text-align:center;margin:0;line-height:1.3;font-style:italic;">"Tahap implementasi tidak hanya menguji sistem, tetapi juga memastikan seluruh pegawai mampu menggunakan aplikasi melalui kolaborasi dan pendampingan."</p>
-                </div>
+                <div class="nilai-quote">"Tahap implementasi tidak hanya menguji sistem, tetapi juga memastikan seluruh pegawai mampu menggunakan aplikasi melalui kolaborasi dan pendampingan."</div>
               </div>
             </div>
-            <div style="display:flex;flex-direction:column;gap:0.35rem;">
-              <div class="card reveal delay-5" style="padding:0.4rem 0.5rem;background:rgba(212,175,55,0.03);border-color:rgba(212,175,55,0.12);">
-                <div class="card-label" style="margin-bottom:0.15rem;">Narasi</div>
-                <p style="font-size:var(--body-sm);color:var(--text-secondary);margin:0;line-height:1.5;font-style:italic;">
-                  "Sistem tidak hanya dibangun, tetapi juga diperkenalkan kepada pengguna melalui sosialisasi dan pendampingan agar implementasi berjalan nyata di lingkungan kerja KPU Kabupaten Siak."
-                </p>
+
+            <!-- Right Column -->
+            <div class="activity-right">
+              <div class="card reveal delay-5">
+                <div class="card-label">Narasi</div>
+                <p class="card-text" style="font-style:italic;">"Sistem tidak hanya dibangun, tetapi juga diperkenalkan kepada pengguna melalui sosialisasi dan pendampingan agar implementasi berjalan nyata di lingkungan kerja KPU Kabupaten Siak."</p>
               </div>
-              <div class="card reveal delay-6" style="padding:0.4rem 0.5rem;">
-                <div class="card-label" style="margin-bottom:0.15rem;">Eviden Dokumentasi</div>
-                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.25rem;">
+
+              <div class="card reveal delay-6 evidence-card">
+                <div class="card-label">Eviden Dokumentasi</div>
+                <div class="evidence-grid-doc">
                   <div class="photo-item">
-                    <img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.jpg" alt="Sosialisasi E-LKH" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
+                    <img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.jpg" alt="Sosialisasi E-LKH">
                     <div class="evidence-label">
                       <span class="evidence-code">E1</span>
                       <span class="evidence-type">Sosialisasi</span>
@@ -403,15 +422,15 @@
                     </div>
                   </div>
                   <div class="photo-item">
-                    <img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png" alt="Materi sosialisasi" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
+                    <img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png" alt="Dokumenter sosialisasi">
                     <div class="evidence-label">
                       <span class="evidence-code">E2</span>
-                      <span class="evidence-type">Materi</span>
-                      <span class="evidence-title">Slide sosialisasi</span>
+                      <span class="evidence-type">Sosialisasi</span>
+                      <span class="evidence-title">Presentasi</span>
                     </div>
                   </div>
-                  <div class="photo-item" style="grid-column:1/-1;">
-                    <img src="assets/images/dokumentasi pendampingan pengguna e-LKH kegiatan 4.jpg" alt="Pendampingan pengguna" style="width:100%;border-radius:0.3rem;cursor:pointer;border:1px solid var(--border);">
+                  <div class="photo-item">
+                    <img src="assets/images/dokumentasi pendampingan pengguna e-LKH kegiatan 4.jpg" alt="Pendampingan pengguna">
                     <div class="evidence-label">
                       <span class="evidence-code">E3</span>
                       <span class="evidence-type">Pendampingan</span>
@@ -420,118 +439,167 @@
                   </div>
                 </div>
               </div>
-              <div style="display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.2rem;flex-wrap:wrap;">
-                <a href="assets/BA Penggunaan Apliaksi e-LKH.pdf" target="_blank" style="display:flex;align-items:center;gap:0.25rem;padding:0.2rem 0.5rem;background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:0.4rem;font-size:0.55rem;color:var(--gold);text-decoration:none;font-weight:600;transition:all 0.2s;" onmouseenter="this.style.background='rgba(212,175,55,0.12)'" onmouseleave="this.style.background='rgba(212,175,55,0.06)'">
-                  BA Penggunaan Aplikasi E-LKH
+
+              <div class="doc-links">
+                <a href="assets/BA Penggunaan Apliaksi e-LKH.pdf" class="doc-link ba-link">
+                  <span>📄</span> BA Penggunaan Aplikasi E-LKH
                 </a>
-                <a href="assets/SK NO 11 2026 Penggunaan Aplikasi E-LKH.pdf" target="_blank" style="display:flex;align-items:center;gap:0.25rem;padding:0.2rem 0.5rem;background:rgba(200,16,46,0.06);border:1px solid rgba(200,16,46,0.15);border-radius:0.4rem;font-size:0.55rem;color:var(--red);text-decoration:none;font-weight:600;transition:all 0.2s;" onmouseenter="this.style.background='rgba(200,16,46,0.12)'" onmouseleave="this.style.background='rgba(200,16,46,0.06)'">
-                  SK Ketua KPU No. 11/2026
+                <a href="assets/SK NO 11 2026 Penggunaan Aplikasi E-LKH.pdf" class="doc-link sk-link">
+                  <span>📜</span> SK Ketua KPU No. 11/2026
+                </a>
+                <a href="assets/LHK_AR. WAHYU PRADANA_21 Maret 2026 - 20 April 2026.pdf" class="doc-link lhk-link">
+                  <span>📋</span> Contoh LHK Hasil E-LKH
                 </a>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- ============ SLIDE 3: BEFORE VS AFTER ============ -->
+      <!-- ==================== SLIDE 3: BEFORE VS AFTER ==================== -->
       <section class="slide" data-index="3">
-        <div class="glass-panel" style="max-width:1100px;">
+        <div class="glass-panel" style="max-width:1200px;">
           <div class="pagination"><span class="step">Capaian Core Isu</span><span class="sep">|</span><span class="tag">Before vs After</span></div>
           <div class="accent-line"></div>
-          <h2 class="section-title" style="font-size:clamp(0.85rem,1.3vw,1.15rem);margin-bottom:0.25rem;">Capaian Penyelesaian Core Isu</h2>
-          <p style="font-size:var(--body-sm);color:var(--text-muted);margin-bottom:0.35rem;">Transformasi pelaporan LKH dari manual menuju digital</p>
+          <h2 class="section-title">Analisis Dampak Capaian Core Isu</h2>
 
-          <div class="ev-body" style="aspect-ratio:unset;min-height:unset;overflow:visible;background:none;flex:none;margin-bottom:0.35rem;">
-            <div style="position:relative;border-radius:0.5rem;overflow:hidden;border:1px solid var(--border);background:rgba(255,255,255,0.02);transition:box-shadow 0.3s;cursor:pointer;" onmouseenter="this.style.boxShadow='0 4px 24px rgba(0,0,0,0.3)'" onmouseleave="this.style.boxShadow=''">
-              <img src="assets/images/before after e-LKH kegiatan 3.png" alt="Perbandingan kondisi sebelum dan sesudah" style="width:100%;max-height:200px;object-fit:contain;display:block;cursor:pointer;">
-              <div style="position:absolute;top:0.35rem;right:0.4rem;background:rgba(0,0,0,0.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:0.25rem;padding:0.15rem 0.45rem;font-size:0.6rem;color:var(--gold);display:flex;align-items:center;gap:0.25rem;pointer-events:none;border:1px solid rgba(212,175,55,0.15);">Klik untuk memperbesar</div>
+          <div class="ba-compare">
+            <div class="ba-compare-col before-col">
+              <div class="ba-header">
+                <span class="ba-dot red"></span>
+                <span class="ba-label-text">Kondisi Awal</span>
+                <span class="ba-count">8 indikator</span>
+              </div>
+              <div class="ba-items">
+                <div class="ba-item"><span>📄</span> Pelaporan manual Microsoft Excel</div>
+                <div class="ba-item"><span>✏️</span> Penginputan akumulatif</div>
+                <div class="ba-item"><span>👁️</span> Monitoring manual dan lambat</div>
+                <div class="ba-item"><span>✅</span> Verifikasi/approval manual</div>
+                <div class="ba-item"><span>📊</span> Rekapitulasi manual, potensi error</div>
+                <div class="ba-item"><span>🔔</span> Belum ada pengingat</div>
+                <div class="ba-item"><span>📁</span> Dokumen tidak terdigitalisasi</div>
+                <div class="ba-item"><span>⚠️</span> Akuntabilitas belum optimal</div>
+              </div>
+              <div class="ba-evidence-thumbs">
+                <div class="ba-evidence-label">Eviden kondisi awal:</div>
+                <div class="ba-thumb-row">
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/Proses Pelaporan Manual.png" alt="Proses Pelaporan Manual">
+                    <div class="evidence-label"><span class="evidence-type">Manual</span><span class="evidence-title">Proses pelaporan</span></div>
+                  </div>
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/Screenshot LKH Manual (Excel).png" alt="Screenshot LKH Manual">
+                    <div class="evidence-label"><span class="evidence-type">Excel</span><span class="evidence-title">Screenshot LKH manual</span></div>
+                  </div>
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/Form excel LKH saat ini kegiatan 1.png" alt="Form Excel LKH">
+                    <div class="evidence-label"><span class="evidence-type">Form</span><span class="evidence-title">Form Excel LKH</span></div>
+                  </div>
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/Format LKH Lama kegiatan 1.png" alt="Format LKH Lama">
+                    <div class="evidence-label"><span class="evidence-type">Format</span><span class="evidence-title">Format LKH lama</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ba-compare-vs">
+              <div class="ba-hero-img" id="baHeroImg">
+                <img src="assets/images/before after e-LKH kegiatan 3.png" alt="Perbandingan kondisi sebelum dan sesudah">
+                <div class="ba-zoom-hint">Klik untuk memperbesar</div>
+              </div>
+              <div class="ba-vs-bar">
+                <div class="ba-pill manual">● Manual</div>
+                <span class="ba-arrow">→</span>
+                <div class="ba-pill digital">● Digital</div>
+              </div>
+            </div>
+
+            <div class="ba-compare-col after-col">
+              <div class="ba-header">
+                <span class="ba-dot green"></span>
+                <span class="ba-label-text">Kondisi Akhir</span>
+                <span class="ba-count">8 indikator</span>
+              </div>
+              <div class="ba-items">
+                <div class="ba-item"><span>💻</span> Pelaporan digital, terintegrasi, mudah diakses</div>
+                <div class="ba-item"><span>📋</span> Penginputan lebih tertib dan terdokumentasi</div>
+                <div class="ba-item"><span>📊</span> Dashboard monitoring real-time, lebih cepat</div>
+                <div class="ba-item"><span>⚡</span> Verifikasi/approval elektronik, efektif, efisien</div>
+                <div class="ba-item"><span>🎯</span> Rekapitulasi otomatis, tertib, akurat</div>
+                <div class="ba-item"><span>📧</span> Notifikasi email otomatis</div>
+                <div class="ba-item"><span>💾</span> Dokumen tersimpan digital, mudah dicari</div>
+                <div class="ba-item"><span>🏆</span> Akuntabilitas meningkat, lebih tertib &amp; transparan</div>
+              </div>
+              <div class="ba-evidence-thumbs">
+                <div class="ba-evidence-label">Eviden kondisi akhir:</div>
+                <div class="ba-thumb-row">
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/halaman dashboard e-LKH Kegiatan 3.png" alt="Dashboard e-LKH">
+                    <div class="evidence-label"><span class="evidence-type">Dashboard</span><span class="evidence-title">Monitoring real-time</span></div>
+                  </div>
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/form input LKH kegiatan 3.png" alt="Form Input LKH">
+                    <div class="evidence-label"><span class="evidence-type">Form</span><span class="evidence-title">Input LKH digital</span></div>
+                  </div>
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/tampilan halaman login LKH Kegiatan 3.png" alt="Login e-LKH">
+                    <div class="evidence-label"><span class="evidence-type">Login</span><span class="evidence-title">Akses terintegrasi</span></div>
+                  </div>
+                  <div class="photo-item" style="aspect-ratio:4/3;">
+                    <img src="assets/images/notifikasi email kegiatan 3.png" alt="Notifikasi Email">
+                    <div class="evidence-label"><span class="evidence-type">Notif</span><span class="evidence-title">Pengingat otomatis</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
-            <div style="background:rgba(200,16,46,0.04);border-radius:0.5rem;border:1px solid rgba(200,16,46,0.12);overflow:hidden;">
-              <div style="padding:0.25rem 0.5rem;border-bottom:1px solid rgba(200,16,46,0.1);display:flex;align-items:center;gap:0.35rem;">
-                <span style="width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;"></span>
-                <span style="font-size:0.65rem;color:var(--red);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Kondisi Awal</span>
-                <span style="margin-left:auto;font-size:0.5rem;color:var(--text-muted);">8 indikator</span>
+          <div class="ba-summary">
+            <div class="ba-summary-left">
+              <div class="ba-stat">
+                <span class="ba-stat-num">8/8</span>
+                <span class="ba-stat-label">Indikator Terselesaikan</span>
               </div>
-              <div style="padding:0.15rem 0.4rem;display:flex;flex-direction:column;">
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">📄</span><span style="font-size:0.65rem;color:var(--text-secondary);">Pelaporan manual Microsoft Excel</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">✏️</span><span style="font-size:0.65rem;color:var(--text-secondary);">Penginputan akumulatif</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">👁️</span><span style="font-size:0.65rem;color:var(--text-secondary);">Monitoring manual dan lambat</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">✅</span><span style="font-size:0.65rem;color:var(--text-secondary);">Verifikasi/approval manual</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">📊</span><span style="font-size:0.65rem;color:var(--text-secondary);">Rekapitulasi manual, potensi error</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">🔔</span><span style="font-size:0.65rem;color:var(--text-secondary);">Belum ada pengingat</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(200,16,46,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">📁</span><span style="font-size:0.65rem;color:var(--text-secondary);">Dokumen tidak terdigitalisasi</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">⚠️</span><span style="font-size:0.65rem;color:var(--text-secondary);">Akuntabilitas belum optimal</span></div>
+              <div class="ba-stat-divider"></div>
+              <div class="ba-stat">
+                <span class="ba-stat-num green">100%</span>
+                <span class="ba-stat-label">Transisi Digital</span>
               </div>
             </div>
-            <div style="background:rgba(16,185,129,0.04);border-radius:0.5rem;border:1px solid rgba(16,185,129,0.12);overflow:hidden;">
-              <div style="padding:0.25rem 0.5rem;border-bottom:1px solid rgba(16,185,129,0.1);display:flex;align-items:center;gap:0.35rem;">
-                <span style="width:6px;height:6px;border-radius:50%;background:#6ee7b7;flex-shrink:0;"></span>
-                <span style="font-size:0.65rem;color:#6ee7b7;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Kondisi Akhir</span>
-                <span style="margin-left:auto;font-size:0.5rem;color:var(--text-muted);">8 indikator</span>
-              </div>
-              <div style="padding:0.15rem 0.4rem;display:flex;flex-direction:column;">
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">💻</span><span style="font-size:0.65rem;color:var(--text-secondary);">Pelaporan digital, terintegrasi, mudah diakses</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">📋</span><span style="font-size:0.65rem;color:var(--text-secondary);">Penginputan lebih tertib dan terdokumentasi</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">📊</span><span style="font-size:0.65rem;color:var(--text-secondary);">Dashboard monitoring real-time, lebih cepat</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">⚡</span><span style="font-size:0.65rem;color:var(--text-secondary);">Verifikasi/approval elektronik, efektif, efisien</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">🎯</span><span style="font-size:0.65rem;color:var(--text-secondary);">Rekapitulasi otomatis, tertib, akurat</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">📧</span><span style="font-size:0.65rem;color:var(--text-secondary);">Notifikasi email otomatis</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;border-bottom:1px solid rgba(16,185,129,0.05);min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">💾</span><span style="font-size:0.65rem;color:var(--text-secondary);">Dokumen tersimpan digital, mudah dicari</span></div>
-                <div style="display:flex;align-items:center;gap:0.25rem;padding:0.1rem 0;min-height:1.1rem;"><span style="font-size:0.6rem;width:1.1rem;text-align:center;opacity:0.7;">🏆</span><span style="font-size:0.65rem;color:var(--text-secondary);">Akuntabilitas meningkat, lebih tertib & transparan</span></div>
+            <div class="ba-summary-right">
+              <div class="ba-kesimpulan">
+                <div class="ba-kesimpulan-text">
+                  <strong>🏁 Kesimpulan Eksekutif:</strong> Aktualisasi ini menyelesaikan <strong>100% core isu</strong> — pelaporan tertib, monitoring <em>real-time</em>, verifikasi elektronik, rekapitulasi otomatis, notifikasi email, dan arsip digital <em>auditable</em>. Inovasi mandiri berbasis <em>low-code</em> terbukti mampu mendorong transformasi tata kelola kinerja ASN yang akuntabel dan adaptif.
+                </div>
               </div>
             </div>
           </div>
 
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.3rem;padding:0.25rem 0.6rem;background:rgba(255,255,255,0.02);border-radius:0.4rem;border:1px solid rgba(255,255,255,0.05);">
-            <div style="display:flex;align-items:center;gap:0.5rem;">
-              <div style="display:flex;align-items:center;gap:0.2rem;padding:0.1rem 0.4rem;background:rgba(200,16,46,0.08);border-radius:1rem;">
-                <span style="font-size:0.55rem;color:var(--red);">●</span>
-                <span style="font-size:0.55rem;color:var(--text-muted);">Manual</span>
-              </div>
-              <span style="font-size:0.6rem;color:rgba(255,255,255,0.15);">→</span>
-              <div style="display:flex;align-items:center;gap:0.2rem;padding:0.1rem 0.4rem;background:rgba(16,185,129,0.08);border-radius:1rem;">
-                <span style="font-size:0.55rem;color:#6ee7b7;">●</span>
-                <span style="font-size:0.55rem;color:var(--text-muted);">Digital</span>
-              </div>
-            </div>
-            <div style="display:flex;align-items:center;gap:0.4rem;">
-              <div style="text-align:center;">
-                <span style="font-size:0.7rem;font-weight:700;color:var(--gold);">8/8</span>
-                <span style="font-size:0.5rem;color:var(--text-muted);display:block;margin-top:0.05rem;">Indikator Terselesaikan</span>
-              </div>
-              <div style="width:1px;height:1rem;background:rgba(255,255,255,0.08);"></div>
-              <div style="text-align:center;">
-                <span style="font-size:0.7rem;font-weight:700;color:#6ee7b7;">100%</span>
-                <span style="font-size:0.5rem;color:var(--text-muted);display:block;margin-top:0.05rem;">Transisi Digital</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <!-- ============ SLIDE 4: MANFAAT ============ -->
+      <!-- ==================== SLIDE 4: MANFAAT ==================== -->
       <section class="slide" data-index="4">
         <div class="glass-panel" style="max-width:1100px;">
           <div class="pagination"><span class="step">Manfaat</span><span class="sep">|</span><span class="tag">Dampak Implementasi</span></div>
           <div class="accent-line"></div>
           <h2 class="section-title">Manfaat Implementasi Sistem E-LKH</h2>
 
-          <div class="col3" style="gap:0.5rem;">
-            <div class="card reveal delay-1" style="padding:0.5rem;">
-              <div class="card-label" style="margin-bottom:0.2rem;">Bagi Penulis</div>
-              <ul class="card-list" style="font-size:var(--body-sm);">
+          <div class="manfaat-grid">
+            <div class="card reveal delay-1">
+              <div class="card-label">Bagi Penulis</div>
+              <ul class="card-list">
                 <li><span class="icon-check">✓</span> Meningkatkan kemampuan analisis, pemecahan masalah, dan pengembangan TI</li>
                 <li><span class="icon-check">✓</span> Pengalaman menerapkan nilai BerAKHLAK dalam tugas</li>
                 <li><span class="icon-check">✓</span> Meningkatkan kompetensi pengembangan sistem berbasis Google Apps Script</li>
                 <li><span class="icon-check">✓</span> Sarana pengembangan kompetensi profesional</li>
               </ul>
             </div>
-            <div class="card reveal delay-2" style="padding:0.5rem;">
-              <div class="card-label" style="margin-bottom:0.2rem;">Bagi Instansi (KPU Kab. Siak)</div>
-              <ul class="card-list" style="font-size:var(--body-sm);">
+            <div class="card reveal delay-2">
+              <div class="card-label">Bagi Instansi (KPU Kab. Siak)</div>
+              <ul class="card-list">
                 <li><span class="icon-check">✓</span> Efektivitas dan efisiensi pengelolaan LKH</li>
                 <li><span class="icon-check">✓</span> Monitoring real-time oleh pimpinan</li>
                 <li><span class="icon-check">✓</span> Verifikasi, approval, rekapitulasi lebih efektif</li>
@@ -539,9 +607,9 @@
                 <li><span class="icon-check">✓</span> Mendukung akuntabilitas administrasi kinerja ASN</li>
               </ul>
             </div>
-            <div class="card reveal delay-3" style="padding:0.5rem;">
-              <div class="card-label" style="margin-bottom:0.2rem;">Bagi Stakeholders</div>
-              <ul class="card-list" style="font-size:var(--body-sm);">
+            <div class="card reveal delay-3">
+              <div class="card-label">Bagi Stakeholders</div>
+              <ul class="card-list">
                 <li><span class="icon-check">✓</span> Mempermudah monitoring, verifikasi, dan pengawasan</li>
                 <li><span class="icon-check">✓</span> Pengambilan keputusan dan evaluasi lebih cepat dan tepat</li>
                 <li><span class="icon-check">✓</span> Meningkatkan kualitas administrasi organisasi</li>
@@ -550,142 +618,407 @@
             </div>
           </div>
 
+
+
         </div>
       </section>
 
-      <!-- ============ SLIDE 5: KESIMPULAN ============ -->
+      <!-- ==================== SLIDE 5: KESIMPULAN ==================== -->
       <section class="slide" data-index="5">
-        <div class="glass-panel" style="max-width:880px;text-align:center;">
-          <div class="accent-line" style="margin:0 auto 0.4rem;"></div>
+        <div class="glass-panel" style="max-width:960px;text-align:center;">
+          <div class="accent-line" style="margin:0 auto 0.5rem;"></div>
           <div class="reveal delay-1">
             <span class="card-label" style="display:inline-block;">Kesimpulan</span>
-            <h2 style="font-size:clamp(1.3rem,2.4vw,2.2rem);font-weight:900;margin-top:0.3rem;margin-bottom:var(--space-sm);">
-              <span class="cover-title"><span class="highlight">Transformasi Digital</span></span><br>
+            <h2 class="kesimpulan-title">
+              <span class="highlight">Transformasi Digital</span><br>
               Pelaporan Kinerja ASN
             </h2>
           </div>
-          <div class="closing-grid stagger" style="margin-bottom:0.3rem;">
-            <div class="closing-card" style="padding:0.5rem;">
-              <div class="num">01</div>
-              <h4 style="font-size:var(--body-sm);">Solusi Konkret</h4>
-              <p style="font-size:0.65rem;">Aktualisasi menghasilkan solusi konkret melalui pengembangan Sistem E-LKH untuk menjawab isu akuntabilitas pelaporan kinerja harian ASN</p>
+
+          <p class="kesimpulan-punchline reveal delay-2">
+            Core issue akuntabilitas pelaporan kinerja harian terselesaikan <span class="punch-100">100%</span>.
+          </p>
+
+          <div class="kesimpulan-mini stagger reveal delay-2">
+            <div class="mini-point">
+              <div class="mini-num">01</div>
+              <div class="mini-label">Solusi Konkret</div>
+              <div class="mini-desc">E-LKH menjawab isu akuntabilitas</div>
             </div>
-            <div class="closing-card" style="padding:0.5rem;">
-              <div class="num">02</div>
-              <h4 style="font-size:var(--body-sm);">Implementasi</h4>
-              <p style="font-size:0.65rem;">Sistem berhasil dikembangkan, diuji coba, disosialisasikan, digunakan, dan didukung dengan dokumen implementasi</p>
+            <div class="mini-point">
+              <div class="mini-num">02</div>
+              <div class="mini-label">Implementasi</div>
+              <div class="mini-desc">Sistem terbangun, teruji, tersosialisasi</div>
             </div>
-            <div class="closing-card" style="padding:0.5rem;">
-              <div class="num">03</div>
-              <h4 style="font-size:var(--body-sm);">Efektivitas</h4>
-              <p style="font-size:0.65rem;">E-LKH membantu penginputan, monitoring, verifikasi, rekapitulasi, dan pengelolaan data laporan menjadi efektif, efisien, transparan, dan akuntabel</p>
-            </div>
-          </div>
-          <div class="card reveal delay-2" style="padding:0.3rem 0.5rem;margin-bottom:0.3rem;display:inline-flex;align-items:center;gap:0.4rem;border-color:rgba(212,175,55,0.15);">
-            <span style="font-size:0.65rem;color:var(--text-secondary);">Core issue telah memperoleh solusi nyata melalui perubahan dari proses manual menuju sistem digital</span>
-          </div>
-          <div class="reveal delay-3" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.35rem;margin-bottom:0.3rem;max-width:620px;margin-left:auto;margin-right:auto;">
-            <div style="padding:0.35rem 0.3rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;">
-              <div style="font-size:clamp(0.85rem,1.3vw,1.1rem);font-weight:900;background:linear-gradient(135deg,var(--gold),#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">87</div>
-              <div style="font-size:0.48rem;color:var(--text-muted);margin-top:0.05rem;">Realisasi Nilai BerAKHLAK</div>
-            </div>
-            <div style="padding:0.35rem 0.3rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;">
-              <div style="font-size:clamp(0.85rem,1.3vw,1.1rem);font-weight:900;background:linear-gradient(135deg,#22c55e,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">100%</div>
-              <div style="font-size:0.48rem;color:var(--text-muted);margin-top:0.05rem;">Penilaian Positif</div>
-            </div>
-            <div style="padding:0.35rem 0.3rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;">
-              <div style="font-size:clamp(0.85rem,1.3vw,1.1rem);font-weight:900;background:linear-gradient(135deg,var(--gold),#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">72%</div>
-              <div style="font-size:0.48rem;color:var(--text-muted);margin-top:0.05rem;">Sangat Layak</div>
-            </div>
-            <div style="padding:0.35rem 0.3rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center;">
-              <div style="font-size:clamp(0.85rem,1.3vw,1.1rem);font-weight:900;background:linear-gradient(135deg,#3b82f6,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">84%</div>
-              <div style="font-size:0.48rem;color:var(--text-muted);margin-top:0.05rem;">Sangat Puas</div>
+            <div class="mini-point">
+              <div class="mini-num">03</div>
+              <div class="mini-label">Efektivitas</div>
+              <div class="mini-desc">Input, monitoring, rekap &ndash; digital &amp; transparan</div>
             </div>
           </div>
-          <div class="reveal delay-4" style="margin-bottom:0.3rem;max-width:680px;margin-left:auto;margin-right:auto;">
-            <div class="card-label" style="text-align:center;margin-bottom:0.25rem;">Internalisasi Nilai BerAKHLAK Selama Aktualisasi</div>
-            <div style="display:flex;flex-direction:column;gap:0.2rem;">
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:linear-gradient(90deg,rgba(212,175,55,0.08),rgba(212,175,55,0.02));border-radius:0.3rem;border-left:3px solid var(--gold);">
-                <span style="font-size:0.65rem;width:0.9rem;text-align:center;">🥇</span>
-                <span style="font-size:0.55rem;font-weight:700;color:#fff;width:5.5rem;">Akuntabel</span>
-                <div style="flex:1;height:0.5rem;background:rgba(255,255,255,0.05);border-radius:0.25rem;overflow:hidden;">
-                  <div style="height:100%;width:100%;background:linear-gradient(90deg,var(--gold),#f5d742);border-radius:0.25rem;"></div>
-                </div>
-                <span style="font-size:0.5rem;font-weight:700;color:var(--gold);min-width:1.5rem;text-align:right;">16</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:rgba(255,255,255,0.02);border-radius:0.3rem;border-left:3px solid rgba(148,163,184,0.3);">
-                <span style="font-size:0.65rem;width:0.9rem;text-align:center;">🥈</span>
-                <span style="font-size:0.55rem;font-weight:600;color:#fff;width:5.5rem;">Kompeten</span>
-                <div style="flex:1;height:0.5rem;background:rgba(255,255,255,0.05);border-radius:0.25rem;overflow:hidden;">
-                  <div style="height:100%;width:93.75%;background:linear-gradient(90deg,#c0c0c0,#e8e8e8);border-radius:0.25rem;"></div>
-                </div>
-                <span style="font-size:0.5rem;font-weight:700;color:#c0c0c0;min-width:1.5rem;text-align:right;">15</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:rgba(255,255,255,0.02);border-radius:0.3rem;border-left:3px solid rgba(180,130,50,0.3);">
-                <span style="font-size:0.65rem;width:0.9rem;text-align:center;">🥉</span>
-                <span style="font-size:0.55rem;font-weight:600;color:#fff;width:5.5rem;">Berorientasi Pelayanan</span>
-                <div style="flex:1;height:0.5rem;background:rgba(255,255,255,0.05);border-radius:0.25rem;overflow:hidden;">
-                  <div style="height:100%;width:87.5%;background:linear-gradient(90deg,#cd7f32,#e8a84c);border-radius:0.25rem;"></div>
-                </div>
-                <span style="font-size:0.5rem;font-weight:700;color:#cd7f32;min-width:1.5rem;text-align:right;">14</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:rgba(255,255,255,0.01);border-radius:0.3rem;border-left:3px solid rgba(255,255,255,0.05);">
-                <span style="font-size:0.55rem;width:0.9rem;text-align:center;opacity:0.5;">4</span>
-                <span style="font-size:0.5rem;font-weight:500;color:var(--text-muted);width:5.5rem;">Adaptif</span>
-                <div style="flex:1;height:0.4rem;background:rgba(255,255,255,0.03);border-radius:0.2rem;overflow:hidden;">
-                  <div style="height:100%;width:81.25%;background:rgba(255,255,255,0.15);border-radius:0.2rem;"></div>
-                </div>
-                <span style="font-size:0.45rem;font-weight:600;color:var(--text-muted);min-width:1.5rem;text-align:right;">13</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:rgba(255,255,255,0.01);border-radius:0.3rem;border-left:3px solid rgba(255,255,255,0.05);">
-                <span style="font-size:0.55rem;width:0.9rem;text-align:center;opacity:0.5;">5</span>
-                <span style="font-size:0.5rem;font-weight:500;color:var(--text-muted);width:5.5rem;">Kolaboratif</span>
-                <div style="flex:1;height:0.4rem;background:rgba(255,255,255,0.03);border-radius:0.2rem;overflow:hidden;">
-                  <div style="height:100%;width:75%;background:rgba(255,255,255,0.15);border-radius:0.2rem;"></div>
-                </div>
-                <span style="font-size:0.45rem;font-weight:600;color:var(--text-muted);min-width:1.5rem;text-align:right;">12</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:rgba(255,255,255,0.01);border-radius:0.3rem;border-left:3px solid rgba(255,255,255,0.05);">
-                <span style="font-size:0.55rem;width:0.9rem;text-align:center;opacity:0.5;">6</span>
-                <span style="font-size:0.5rem;font-weight:500;color:var(--text-muted);width:5.5rem;">Loyal</span>
-                <div style="flex:1;height:0.4rem;background:rgba(255,255,255,0.03);border-radius:0.2rem;overflow:hidden;">
-                  <div style="height:100%;width:56.25%;background:rgba(255,255,255,0.15);border-radius:0.2rem;"></div>
-                </div>
-                <span style="font-size:0.45rem;font-weight:600;color:var(--text-muted);min-width:1.5rem;text-align:right;">9</span>
-              </div>
-              <div style="display:flex;align-items:center;gap:0.25rem;padding:0.15rem 0.5rem;background:rgba(255,255,255,0.01);border-radius:0.3rem;border-left:3px solid rgba(255,255,255,0.05);">
-                <span style="font-size:0.55rem;width:0.9rem;text-align:center;opacity:0.5;">7</span>
-                <span style="font-size:0.5rem;font-weight:500;color:var(--text-muted);width:5.5rem;">Harmonis</span>
-                <div style="flex:1;height:0.4rem;background:rgba(255,255,255,0.03);border-radius:0.2rem;overflow:hidden;">
-                  <div style="height:100%;width:50%;background:rgba(255,255,255,0.15);border-radius:0.2rem;"></div>
-                </div>
-                <span style="font-size:0.45rem;font-weight:600;color:var(--text-muted);min-width:1.5rem;text-align:right;">8</span>
-              </div>
+
+          <div class="kesimpulan-stats reveal delay-3">
+            <div class="kstat-item">
+              <span class="kstat-num gold">87</span>
+              <span class="kstat-label">Realisasi BerAKHLAK</span>
             </div>
-            <div style="margin-top:0.2rem;padding:0.2rem 0.5rem;background:rgba(212,175,55,0.04);border:1px solid rgba(212,175,55,0.1);border-radius:0.4rem;">
-              <div style="display:flex;align-items:center;gap:0.3rem;">
-                <span style="font-size:0.7rem;">🏆</span>
-                <div>
-                  <div style="font-size:0.55rem;font-weight:700;color:var(--gold);">Nilai BerAKHLAK Paling Dominan — Akuntabel (16 Realisasi)</div>
-                  <p style="font-size:0.5rem;color:var(--text-muted);margin:0.05rem 0 0 0;line-height:1.3;">Nilai Akuntabel menjadi nilai yang paling banyak diimplementasikan selama proses aktualisasi, menunjukkan komitmen terhadap tanggung jawab, transparansi, dan penyelesaian tugas secara konsisten.</p>
-                </div>
-              </div>
+            <span class="kstat-divider"></span>
+            <div class="kstat-item top3">
+              <span class="kstat-label">TOP 3</span>
+              <span class="kstat-detail">Akuntabel&nbsp;16 · Kompeten&nbsp;15 · Berorientasi&nbsp;Pelayanan&nbsp;14</span>
             </div>
-            <div style="margin-top:0.2rem;padding:0.2rem 0.5rem;background:rgba(255,255,255,0.02);border-radius:0.35rem;border:1px solid rgba(255,255,255,0.04);">
-              <p style="font-size:0.5rem;color:var(--text-secondary);margin:0;line-height:1.4;text-align:center;font-style:italic;">"Seluruh rangkaian aktualisasi tidak hanya menghasilkan Sistem E-LKH sebagai inovasi digital, tetapi juga menunjukkan implementasi nyata nilai-nilai BerAKHLAK. Secara keseluruhan, nilai Akuntabel menjadi yang paling dominan, didukung oleh Kompeten dan Berorientasi Pelayanan, sehingga transformasi digital yang dihasilkan tidak hanya berorientasi pada teknologi, tetapi juga pada peningkatan kualitas tata kelola ASN."</p>
+            <span class="kstat-divider"></span>
+            <div class="kstat-item">
+              <span class="kstat-num accent">84%</span>
+              <span class="kstat-label">Sangat Puas</span>
+            </div>
+            <span class="kstat-divider"></span>
+            <div class="kstat-item">
+              <span class="kstat-num green">100%</span>
+              <span class="kstat-label">Penilaian Positif</span>
             </div>
           </div>
-          <div class="reveal delay-5" style="max-width:620px;margin:0 auto;">
-            <div style="padding:0.4rem 1rem;background:linear-gradient(90deg,rgba(200,16,46,0.06),rgba(212,175,55,0.06));border-radius:var(--radius-md);border:1px solid var(--border);">
-              <p style="font-size:0.7rem;color:var(--text-secondary);font-style:italic;line-height:1.4;">"Sistem E-LKH berhasil mentransformasi pelaporan kinerja ASN dari proses manual menjadi sistem digital yang lebih efektif, efisien, transparan, dan akuntabel sesuai kebutuhan organisasi."</p>
+
+
+
+          <div class="reveal delay-5 closing-footer">
+            <div class="closing-quote">
+              <p>&ldquo;Transformasi manual ke digital yang akuntabel dan adaptif &mdash; solusi nyata tata kelola kinerja ASN yang lebih baik.&rdquo;</p>
             </div>
-            <div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:0.3rem;font-size:0.5rem;color:var(--text-muted);">
-              <span style="font-weight:600;color:#fff;">Ar. Wahyu Pradana, S.T</span>
-              <span style="width:1px;height:8px;background:rgba(255,255,255,0.15);"></span>
+            <div class="closing-signature">
+              <span>Ar. Wahyu Pradana, S.T</span>
+              <span class="sig-div"></span>
               <span>NIP. 19950507 202506 1 008</span>
-              <span style="width:1px;height:8px;background:rgba(255,255,255,0.15);"></span>
+              <span class="sig-div"></span>
               <span>KPU Kabupaten Siak</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 6: EVIDENCE DASHBOARD (CADANGAN) ==================== -->
+      <section class="slide" data-index="6">
+        <div class="glass-panel" style="max-width:1100px;">
+          <div class="pagination"><span class="step">Lampiran</span><span class="sep">|</span><span class="tag">Evidence Dashboard</span></div>
+          <div class="accent-line"></div>
+          <h2 class="section-title" style="margin-bottom:0.3rem;">Dashboard Eviden Aktualisasi</h2>
+          <p style="color:var(--text-muted);font-size:0.72rem;margin-bottom:0.5rem;text-align:center;">Kumpulan bukti fisik Kegiatan 1 — 6 · Klik kartu untuk lihat semua eviden</p>
+
+          <div class="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-3 max-w-[1000px] mx-auto">
+            <!-- KEGIATAN 1 -->
+            <div class="ev-card group bg-slate-900/70 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-emerald-500/30 cursor-pointer" data-evidence="assets/images/Diskusi dengan mentor antasan dan pengguna LKH kegiatan 1.png,assets/images/Notulensi Kebutuhan Pengguna Kegiatan 1.png,assets/images/meminta izin mentor untuk melakukan aktualisasi kegiatan 1.png,assets/images/Dokumen persetujuan aktualisasi kegiatan 1.png,assets/images/daftar kebutuhan fitur sistem E-LKH 1 kegiatan 1.png,assets/images/daftar kebutuhan fitur sistem E-LKH 2 kegiatan 1.png,assets/images/daftar kebutuhan fitur sistem E-LKH 3 kegiatan 1.png" data-evidence-label="Kegiatan 1: Analisis &amp; Perencanaan">
+              <div class="flex items-center gap-2 px-3 py-2.5 border-b border-slate-800/40">
+                <span class="text-[0.65rem] font-black text-amber-400/60 w-5 text-center shrink-0">01</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[0.7rem] font-bold text-slate-200">Analisis &amp; Perencanaan</div>
+                  <div class="text-[0.55rem] text-slate-500 font-medium">Kegiatan 1 · 7 file</div>
+                </div>
+                <span class="text-[0.5rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 shrink-0">100%</span>
+              </div>
+              <div class="relative aspect-[16/10] bg-black/30 overflow-hidden">
+                <img src="assets/images/Diskusi dengan mentor antasan dan pengguna LKH kegiatan 1.png" alt="Kegiatan 1" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:saturate-[1.1]">
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] pointer-events-none">
+                  <span class="text-2xl">📂</span>
+                  <span class="text-[0.6rem] font-bold text-amber-400 tracking-wide">Lihat 7 eviden</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 px-3 py-2">
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/15">🖼️ Konsultasi</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📋 Notulensi</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">✅ Izin Mentor</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">✅ Persetujuan</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">📑 Kebutuhan Fitur</span>
+              </div>
+            </div>
+
+            <!-- KEGIATAN 2 -->
+            <div class="ev-card group bg-slate-900/70 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-emerald-500/30 cursor-pointer" data-evidence="assets/images/Dokumentasi pengkajian format LKH lama Kegiatan 2.png,assets/images/Dokumentasi penyusunan draft format LKH baru Kegiatan 2.png,assets/images/Dokumentasi konsultasi dan validasi dengan atasanmentor Kegiatan 2.png,assets/images/Dokumentasi Konsultasi dengan Kasubag Parhumas dan SDM Kegiatan 2.png,assets/images/lembar persetujuan format baru Kegiatan 2.png" data-evidence-label="Kegiatan 2: Perancangan Format">
+              <div class="flex items-center gap-2 px-3 py-2.5 border-b border-slate-800/40">
+                <span class="text-[0.65rem] font-black text-amber-400/60 w-5 text-center shrink-0">02</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[0.7rem] font-bold text-slate-200">Perancangan Format</div>
+                  <div class="text-[0.55rem] text-slate-500 font-medium">Kegiatan 2 · 5 file</div>
+                </div>
+                <span class="text-[0.5rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 shrink-0">100%</span>
+              </div>
+              <div class="relative aspect-[16/10] bg-black/30 overflow-hidden">
+                <img src="assets/images/Dokumentasi pengkajian format LKH lama Kegiatan 2.png" alt="Kegiatan 2" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:saturate-[1.1]">
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] pointer-events-none">
+                  <span class="text-2xl">📂</span>
+                  <span class="text-[0.6rem] font-bold text-amber-400 tracking-wide">Lihat 5 eviden</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 px-3 py-2">
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/15">🖼️ Pengkajian</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📄 Draft Baru</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">✅ Persetujuan</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/15">🖼️ Konsultasi</span>
+              </div>
+            </div>
+
+            <!-- KEGIATAN 3 -->
+            <div class="ev-card group bg-slate-900/70 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-emerald-500/30 cursor-pointer" data-evidence="assets/images/usecase diagram Kegiatan 3.png,assets/images/Rancangan Database e-LKH Kegiatan 3.png,assets/images/flowchart pengelolaan LKH.png,assets/images/flowchart login Kegiatan 3.png,assets/images/flowchart monitoring Kegiatan 3.png,assets/images/flowchart verifikasi laporan Kegiatan 3.png,assets/images/konsultasi dengan mentor terkait rancangan sistem kegiatan 3.jpg,assets/images/before after e-LKH kegiatan 3.png,assets/images/coding e-lkh kegiatan 3.png,assets/images/source fitur login pengguna kegiatan 3.png,assets/images/pengembangan fitur notifikasi email kegiatan 3.png,assets/images/halaman dashboard e-LKH Kegiatan 3.png,assets/images/form input LKH kegiatan 3.png,assets/images/tampilan halaman login LKH Kegiatan 3.png,assets/images/fitur reset password kegiatan 3.png,assets/images/fitur monitoring laporan pegawai kegiatan 3.png,assets/images/pengujian internal LKH kegiatan 3.png,assets/images/proses uji fungsi internal sistem kegiatan 3.png,assets/images/tampilan fitur pengajuan serta verifikasi LHK kegiatan 3.png,assets/images/hasil verifikasi dokumen dengan qrcode kegiatan 3.png,assets/images/notifikasi email kegiatan 3.png,assets/images/hasil ringkasan AI untuk detail LKH pegawai Kegiatan 3.png,assets/images/monitoring kegiatan 3.png,assets/images/pengelolaan hak akses pengguna kegiatan 3.png,assets/images/penyempurnaan tampilan dan optimalisasi kegiatan 3.jpg" data-evidence-label="Kegiatan 3: Pengembangan Sistem">
+              <div class="flex items-center gap-2 px-3 py-2.5 border-b border-slate-800/40">
+                <span class="text-[0.65rem] font-black text-amber-400/60 w-5 text-center shrink-0">03</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[0.7rem] font-bold text-slate-200">Pengembangan Sistem</div>
+                  <div class="text-[0.55rem] text-slate-500 font-medium">Kegiatan 3 · 26 file</div>
+                </div>
+                <span class="text-[0.5rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 shrink-0">100%</span>
+              </div>
+              <div class="relative aspect-[16/10] bg-black/30 overflow-hidden">
+                <img src="assets/images/coding e-lkh kegiatan 3.png" alt="Kegiatan 3" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:saturate-[1.1]">
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] pointer-events-none">
+                  <span class="text-2xl">📂</span>
+                  <span class="text-[0.6rem] font-bold text-amber-400 tracking-wide">Lihat 26 eviden</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 px-3 py-2">
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">📊 Flowchart</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">📐 Use Case</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">💾 Database</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">⌨️ Source Code</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">📈 Dashboard</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">📧 Notifikasi</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">🔒 Login</span>
+              </div>
+            </div>
+
+            <!-- KEGIATAN 4 -->
+            <div class="ev-card group bg-slate-900/70 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-emerald-500/30 cursor-pointer" data-evidence="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.jpg,assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png,assets/images/dokumentasi pendampingan pengguna e-LKH kegiatan 4.jpg,assets/images/rekap masukan pengguna kegiatan 4.png" data-evidence-label="Kegiatan 4: Implementasi &amp; Sosialisasi">
+              <div class="flex items-center gap-2 px-3 py-2.5 border-b border-slate-800/40">
+                <span class="text-[0.65rem] font-black text-amber-400/60 w-5 text-center shrink-0">04</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[0.7rem] font-bold text-slate-200">Implementasi &amp; Sosialisasi</div>
+                  <div class="text-[0.55rem] text-slate-500 font-medium">Kegiatan 4 · 4 file</div>
+                </div>
+                <span class="text-[0.5rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 shrink-0">100%</span>
+              </div>
+              <div class="relative aspect-[16/10] bg-black/30 overflow-hidden">
+                <img src="assets/images/dokumentasi sosialisasi e-lkh kegiatan 4.png" alt="Kegiatan 4" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:saturate-[1.1]">
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] pointer-events-none">
+                  <span class="text-2xl">📂</span>
+                  <span class="text-[0.6rem] font-bold text-amber-400 tracking-wide">Lihat 4 eviden</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 px-3 py-2">
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/15">🖼️ Sosialisasi</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/15">🖼️ Pendampingan</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📋 Rekap Masukan</span>
+              </div>
+            </div>
+
+            <!-- KEGIATAN 5 -->
+            <div class="ev-card group bg-slate-900/70 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-emerald-500/30 cursor-pointer" data-evidence="assets/images/form kueisioner evaluasi kepuasan pengguna e-LKH kegiatan 5.png,assets/images/Data responden hasil evaluasi sistem E-LKH kegiatan 5.png,assets/images/Rekap hasil evaluasi sistem E-LKH kegiatan 5.png,assets/images/analisis hasil evaluasi sistem E-LKH Kegiatan 5.png,assets/images/hasil perbaikan dan penyesuaian sistem kegiatan 5.png" data-evidence-label="Kegiatan 5: Evaluasi &amp; Perbaikan">
+              <div class="flex items-center gap-2 px-3 py-2.5 border-b border-slate-800/40">
+                <span class="text-[0.65rem] font-black text-amber-400/60 w-5 text-center shrink-0">05</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[0.7rem] font-bold text-slate-200">Evaluasi &amp; Perbaikan</div>
+                  <div class="text-[0.55rem] text-slate-500 font-medium">Kegiatan 5 · 5 file</div>
+                </div>
+                <span class="text-[0.5rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 shrink-0">100%</span>
+              </div>
+              <div class="relative aspect-[16/10] bg-black/30 overflow-hidden">
+                <img src="assets/images/Rekap hasil evaluasi sistem E-LKH kegiatan 5.png" alt="Kegiatan 5" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:saturate-[1.1]">
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] pointer-events-none">
+                  <span class="text-2xl">📂</span>
+                  <span class="text-[0.6rem] font-bold text-amber-400 tracking-wide">Lihat 5 eviden</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 px-3 py-2">
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📊 Kuesioner</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📊 Responden</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📊 Rekap</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📊 Analisis</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/15">🔧 Perbaikan</span>
+              </div>
+            </div>
+
+            <!-- KEGIATAN 6 -->
+            <div class="ev-card group bg-slate-900/70 border border-slate-800/60 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:border-emerald-500/30 cursor-pointer" data-evidence="assets/images/dokumentasi konsultasi laporan aktualisasi dengan mentor kegiatan 6.jpg,assets/images/pengumpulan berkas dokumen kegiatan aktualisasi kegiatan 6.png" data-evidence-label="Kegiatan 6: Finalisasi">
+              <div class="flex items-center gap-2 px-3 py-2.5 border-b border-slate-800/40">
+                <span class="text-[0.65rem] font-black text-amber-400/60 w-5 text-center shrink-0">06</span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[0.7rem] font-bold text-slate-200">Finalisasi &amp; Pelaporan</div>
+                  <div class="text-[0.55rem] text-slate-500 font-medium">Kegiatan 6 · 2 file</div>
+                </div>
+                <span class="text-[0.5rem] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 shrink-0">100%</span>
+              </div>
+              <div class="relative aspect-[16/10] bg-black/30 overflow-hidden">
+                <img src="assets/images/dokumentasi konsultasi laporan aktualisasi dengan mentor kegiatan 6.jpg" alt="Kegiatan 6" class="w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:saturate-[1.1]">
+                <div class="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] pointer-events-none">
+                  <span class="text-2xl">📂</span>
+                  <span class="text-[0.6rem] font-bold text-amber-400 tracking-wide">Lihat 2 eviden</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-1.5 px-3 py-2">
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-300 border border-violet-500/15">🖼️ Konsultasi</span>
+                <span class="text-[0.5rem] font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/15">📁 Pengumpulan Berkas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-center gap-3 mt-3 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 text-[0.55rem] font-medium px-2.5 py-1 rounded-full bg-slate-800/60 text-slate-400 border border-slate-700/50">
+              <span>🛡️</span> Total 48 file eviden · Semua kegiatan terverifikasi
+            </span>
+            <a href="https://drive.google.com/file/d/1dAQszgElN9royD6eyj69PN7_3INfoJn4/view?usp=sharing" target="_blank" class="inline-flex items-center gap-1 text-[0.55rem] font-medium px-2.5 py-1 rounded-full bg-yellow-500/8 text-yellow-400/80 border border-yellow-500/15 no-underline transition-all duration-200 hover:bg-yellow-500/15">
+              <span>▶️</span> Video Dokumentasi
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 7: MATRIK HABITUASI BERAKHLAK ==================== -->
+      <section class="slide" data-index="7">
+        <div class="glass-panel" style="max-width:1200px;">
+          <div class="pagination"><span class="step">Matrik Habituasi</span><span class="sep">|</span><span class="tag">Realisasi BerAKHLAK</span></div>
+          <div class="accent-line"></div>
+          <h2 class="section-title" style="margin-bottom:0.15rem;">Matrik Realisasi Nilai BerAKHLAK</h2>
+          <p style="color:var(--text-muted);font-size:0.75rem;margin-bottom:0.4rem;text-align:center;">Perbandingan Rencana vs Realisasi aktualisasi per nilai dan per kegiatan — <span class="text-emerald-400 font-semibold">hijau</span> = melampaui target</p>
+
+          <div class="overflow-x-auto pb-1">
+            <table class="berakhlak-matrix">
+              <thead>
+                <tr>
+                  <th class="bm-num">#</th>
+                  <th class="bm-nilai">Nilai BerAKHLAK</th>
+                  <th class="bm-keg" colspan="2">Keg 1</th>
+                  <th class="bm-keg" colspan="2">Keg 2</th>
+                  <th class="bm-keg" colspan="2">Keg 3</th>
+                  <th class="bm-keg" colspan="2">Keg 4</th>
+                  <th class="bm-keg" colspan="2">Keg 5</th>
+                  <th class="bm-keg" colspan="2">Keg 6</th>
+                  <th class="bm-total">Total</th>
+                </tr>
+                <tr class="bm-sub">
+                  <th></th>
+                  <th></th>
+                  <th class="bm-plan">R</th>
+                  <th class="bm-real">Rl</th>
+                  <th class="bm-plan">R</th>
+                  <th class="bm-real">Rl</th>
+                  <th class="bm-plan">R</th>
+                  <th class="bm-real">Rl</th>
+                  <th class="bm-plan">R</th>
+                  <th class="bm-real">Rl</th>
+                  <th class="bm-plan">R</th>
+                  <th class="bm-real">Rl</th>
+                  <th class="bm-plan">R</th>
+                  <th class="bm-real">Rl</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bm-num">1</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-blue"></span>Berorientasi Pelayanan</td>
+                  <td class="bm-plan">3</td><td class="bm-real bm-exceed">3</td>
+                  <td class="bm-plan">2</td><td class="bm-real bm-exceed">3</td>
+                  <td class="bm-plan">1</td><td class="bm-real bm-exceed">2</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-total"><span class="bm-plan">12</span> <span class="bm-total-arrow">→</span> <span class="bm-real bm-exceed">14</span></td>
+                </tr>
+                <tr>
+                  <td class="bm-num">2</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-red"></span>Akuntabel</td>
+                  <td class="bm-plan">1</td><td class="bm-real bm-exceed">3</td>
+                  <td class="bm-plan">2</td><td class="bm-real bm-exceed">3</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-total"><span class="bm-plan">13</span> <span class="bm-total-arrow">→</span> <span class="bm-real bm-exceed">16</span></td>
+                </tr>
+                <tr>
+                  <td class="bm-num">3</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-yellow"></span>Kompeten</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">4</td><td class="bm-real">4</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-total"><span class="bm-plan">15</span> <span class="bm-total-arrow">→</span> <span class="bm-real">15</span></td>
+                </tr>
+                <tr>
+                  <td class="bm-num">4</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-purple"></span>Harmonis</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-total"><span class="bm-plan">8</span> <span class="bm-total-arrow">→</span> <span class="bm-real">8</span></td>
+                </tr>
+                <tr>
+                  <td class="bm-num">5</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-green"></span>Loyal</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-total"><span class="bm-plan">9</span> <span class="bm-total-arrow">→</span> <span class="bm-real">9</span></td>
+                </tr>
+                <tr>
+                  <td class="bm-num">6</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-cyan"></span>Adaptif</td>
+                  <td class="bm-plan">1</td><td class="bm-real bm-exceed">2</td>
+                  <td class="bm-plan">1</td><td class="bm-real bm-exceed">2</td>
+                  <td class="bm-plan">3</td><td class="bm-real bm-exceed">4</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-total"><span class="bm-plan">10</span> <span class="bm-total-arrow">→</span> <span class="bm-real bm-exceed">13</span></td>
+                </tr>
+                <tr>
+                  <td class="bm-num">7</td>
+                  <td class="bm-nilai"><span class="bm-nilai-dot dot-orange"></span>Kolaboratif</td>
+                  <td class="bm-plan">2</td><td class="bm-real bm-exceed">3</td>
+                  <td class="bm-plan">2</td><td class="bm-real">2</td>
+                  <td class="bm-plan">1</td><td class="bm-real bm-exceed">2</td>
+                  <td class="bm-plan">3</td><td class="bm-real">3</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-plan">1</td><td class="bm-real">1</td>
+                  <td class="bm-total"><span class="bm-plan">10</span> <span class="bm-total-arrow">→</span> <span class="bm-real bm-exceed">12</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="bm-num"></td>
+                  <td class="bm-nilai bm-foot-label">Jumlah per Kegiatan</td>
+                  <td class="bm-plan bm-foot">13</td><td class="bm-real bm-exceed bm-foot">17</td>
+                  <td class="bm-plan bm-foot">12</td><td class="bm-real bm-exceed bm-foot">15</td>
+                  <td class="bm-plan bm-foot">14</td><td class="bm-real bm-exceed bm-foot">17</td>
+                  <td class="bm-plan bm-foot">12</td><td class="bm-real bm-foot">12</td>
+                  <td class="bm-plan bm-foot">13</td><td class="bm-real bm-foot">13</td>
+                  <td class="bm-plan bm-foot">13</td><td class="bm-real bm-foot">13</td>
+                  <td class="bm-total bm-foot-total"><span class="bm-plan">77</span> <span class="bm-total-arrow">→</span> <span class="bm-real bm-exceed">87</span></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="flex items-center justify-center gap-4 mt-2 flex-wrap">
+            <span class="inline-flex items-center gap-1.5 text-[0.55rem] text-slate-400">
+              <span class="w-2.5 h-2.5 rounded bg-slate-700/60 border border-slate-600/50"></span>
+              <span>Rencana</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-[0.55rem] text-slate-400">
+              <span class="w-2.5 h-2.5 rounded bg-emerald-500/30 border border-emerald-500/40"></span>
+              <span>Realisasi</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-[0.55rem] text-emerald-400">
+              <span class="w-2.5 h-2.5 rounded bg-emerald-400/30 border border-emerald-400/50 flex items-center justify-center text-[0.4rem] font-bold text-emerald-400">+</span>
+              <span>Melampaui target</span>
+            </span>
+            <span class="text-slate-600 text-[0.5rem]">|</span>
+            <span class="text-[0.55rem] text-amber-400 font-bold">Total Realisasi: 87 / 77 (113%)</span>
           </div>
         </div>
       </section>
@@ -729,11 +1062,23 @@
     <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
     <div class="lightbox-img-wrap">
       <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
     <div class="lightbox-counter" id="lightboxCounter"></div>
   </div>
 
+  <!-- ===== PDF MODAL ===== -->
+  <div class="pdf-modal" id="pdfModal">
+    <div class="pdf-modal-backdrop" id="pdfModalBackdrop"></div>
+    <div class="pdf-modal-container">
+      <button class="pdf-modal-close" id="pdfModalClose">&times;</button>
+      <div class="pdf-modal-title" id="pdfModalTitle">Dokumen</div>
+      <iframe class="pdf-modal-iframe" id="pdfModalIframe" src=""></iframe>
+    </div>
+  </div>
+
   <script src="js/lightbox.js"></script>
+  <script src="js/pdf-modal.js"></script>
 </body>
 
 </html>

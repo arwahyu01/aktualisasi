@@ -69,6 +69,10 @@
   // --- Keyboard Navigation ---
   document.addEventListener('keydown', function(e) {
     const key = e.key;
+    // If lightbox is open, block slide navigation keys
+    const lb = document.getElementById('lightboxOverlay');
+    if (lb && lb.classList.contains('open')) return;
+
     if (key === 'ArrowDown' || key === 'ArrowRight' || key === ' ') {
       e.preventDefault();
       goTo(current + 1);

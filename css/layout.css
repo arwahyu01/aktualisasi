@@ -93,7 +93,7 @@
   padding: var(--space-lg) var(--space-xl);
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity:0; transform:translateY(20px);
-  max-height:88vh; overflow-y:auto;
+  max-height:90vh; overflow-y:auto;
   overflow-x:hidden;
 }
 .glass-panel::-webkit-scrollbar { width:3px; }

@@ -1,6 +1,7 @@
 (function(){
   var overlay = document.getElementById('lightboxOverlay');
   var imgEl = document.getElementById('lightboxImg');
+  var captionEl = document.getElementById('lightboxCaption');
   var counterEl = document.getElementById('lightboxCounter');
   var prevBtn = document.getElementById('lightboxPrev');
   var nextBtn = document.getElementById('lightboxNext');
@@ -15,7 +16,7 @@
     var slides = document.querySelectorAll('.slide');
     var result = [];
     for (var s = 0; s < slides.length; s++) {
-      var imgs = slides[s].querySelectorAll('.photo-item img, .showcase-body img, .ev-body img');
+      var imgs = slides[s].querySelectorAll('.photo-item img, .showcase-body img, .ev-body img, .ba-hero-img img');
       for (var i = 0; i < imgs.length; i++) {
         result.push({
           src: imgs[i].getAttribute('src'),
@@ -32,6 +33,9 @@
     var item = images[currentIndex];
     imgEl.setAttribute('src', item.src);
     imgEl.setAttribute('alt', item.alt);
+    if (captionEl) {
+      captionEl.textContent = item.alt || '';
+    }
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
     updateNav();
@@ -62,7 +66,7 @@
 
   // Delegate click on photo items
   document.addEventListener('click', function(e){
-    var img = e.target.closest('.photo-item img, .showcase-body img, .ev-body img');
+    var img = e.target.closest('.photo-item img, .showcase-body img, .ev-body img, .ba-hero-img img');
     if (!img) return;
     if (img.closest('.lightbox-overlay')) return;
     images = collectImages();
@@ -93,6 +97,43 @@
       case 'ArrowLeft': e.preventDefault(); prev(); break;
       case 'ArrowRight': e.preventDefault(); next(); break;
     }
+  });
+
+  // === OPEN LIGHTBOX WITH A CUSTOM GROUP OF IMAGES ===
+  // Used when clicking on a tahapan (step) to show its evidence
+  window.openLightboxGroup = function(srcArray, stageName) {
+    var label = stageName || 'Evidence';
+    images = srcArray.map(function(src, i) {
+      return {
+        src: src,
+        alt: label + (srcArray.length > 1 ? ' — ' + (i + 1) : '')
+      };
+    });
+    if (images.length > 0) open(0);
+  };
+
+  // Bind click on all step-list items with data-evidence
+  document.addEventListener('click', function(e) {
+    var li = e.target.closest('.step-list li[data-evidence]');
+    if (!li) return;
+    var raw = li.getAttribute('data-evidence');
+    if (!raw) return;
+    var srcArray = raw.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+    if (srcArray.length === 0) return;
+    var stageName = li.getAttribute('data-evidence-label') || '';
+    window.openLightboxGroup(srcArray, stageName);
+  });
+
+  // Bind click on evidence dashboard cards
+  document.addEventListener('click', function(e) {
+    var card = e.target.closest('.ev-card[data-evidence]');
+    if (!card) return;
+    var raw = card.getAttribute('data-evidence');
+    if (!raw) return;
+    var srcArray = raw.split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+    if (srcArray.length === 0) return;
+    var label = card.getAttribute('data-evidence-label') || '';
+    window.openLightboxGroup(srcArray, label);
   });
 
 })();
